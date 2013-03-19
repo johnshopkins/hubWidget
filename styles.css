@@ -1,55 +1,55 @@
-.hub-widget {
+#hubWidget {
   background: #fff;
   color: #000;
 }
-.hub-widget .header {
+#hubWidget .header {
   border-bottom: 5px solid #000;
 }
-.hub-widget a {
+#hubWidget a {
   color: #000;
 }
-.hub-widget a:hover {
+#hubWidget a:hover {
   color: #5091cd;
 }
-.hub-widget .pubdate {
+#hubWidget .pubdate {
   color: #aaa;
 }
-.hub-widget {
+#hubWidget {
   padding: 15px;
   width: 250px;
 }
-.hub-widget .header {
+#hubWidget .header {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-.hub-widget ul {
+#hubWidget ul {
   list-style: none;
   padding: 0;
 }
-.hub-widget ul li {
+#hubWidget ul li {
   margin-bottom: 10px;
 }
-.hub-widget ul p {
+#hubWidget ul p {
   margin: 0;
   padding: 0;
 }
-.hub-widget {
+#hubWidget {
   font-family: "Myriad Pro", Myriad, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
 }
-.hub-widget .header {
+#hubWidget .header {
   font-size: 20px;
   font-weight: bold;
 }
-.hub-widget .headline {
+#hubWidget .headline {
   font-size: 15px;
 }
-.hub-widget a {
+#hubWidget a {
   text-decoration: none;
 }
-.hub-widget .pubdate {
+#hubWidget .pubdate {
   font-size: 13px;
   color: #aaa;
 }
-.hub-widget .hubpower {
+#hubWidget .hubpower {
   text-align: right;
 }
