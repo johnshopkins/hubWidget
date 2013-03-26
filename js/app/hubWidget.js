@@ -22,7 +22,7 @@ var hubWidget = (function ($, hubJS) {
 
 			// Initialize hubJS
 			hubJS.init({ v: 0 });
-			hubJS.baseUrl = "http://local.api.hub.jhu.edu/";
+			hubJS.baseUrl = "http://api.hub.jhu.edu/";
 
 			return _library;
 		},
@@ -32,7 +32,7 @@ var hubWidget = (function ($, hubJS) {
 		 * @param  {Lamdba(data, jqXHR)} Callback that fires upon successful retrieval of data.
 		 * @return {object} hubWidget
 		 */
-		getArticles: function(callback) {
+		getArticles: function() {
 			hubJS.articles.find({ per_page: 5 }, function(payload) {
 				if (!payload.error) {
 					_library.populateWidget(payload._embedded.articles);
@@ -57,6 +57,8 @@ var hubWidget = (function ($, hubJS) {
                 var html = html + "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
 				$("#hubWidget ul").append(html);
 			});
+
+			
 		},
 
 		/**
