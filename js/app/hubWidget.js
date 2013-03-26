@@ -14,6 +14,9 @@ var hubWidget = (function ($, hubJS) {
 		 */
 		init: function() {
 
+			// Initial HTML
+			$("#hubWidget").html("<div class=\"header\">News</div><div class=\"content\"></div><div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><img src=\"images/hubpower.gif\" alt=\"Powered by the Hub\" /></a></div>");
+			
 			// Add a loading gif to the widget content area
 			$("#hubWidget .content").html("<p style=\"text-align:center;\"><img src=\"images/loading.gif\" /></p>");
 
