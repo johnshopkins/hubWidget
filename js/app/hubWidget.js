@@ -15,10 +15,7 @@ var hubWidget = (function ($, hubJS) {
 		init: function() {
 
 			// Initial HTML
-			$("#hubWidget").html("<div class=\"header\">News</div><div class=\"content\"></div><div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><img src=\"images/hubpower.gif\" alt=\"Powered by the Hub\" /></a></div>");
-			
-			// Add a loading gif to the widget content area
-			$("#hubWidget .content").html("<p style=\"text-align:center;\"><img src=\"images/loading.gif\" /></p>");
+			$("#hubWidget").html("<div class=\"header\">News</div><div class=\"content loading\"></div><div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div>");
 
 			// Save off hubWidget for use in the return object
 			_library = this;
@@ -52,7 +49,7 @@ var hubWidget = (function ($, hubJS) {
 		 * @return {object} hubWidget
 		 */
 		populateWidget: function(articles) {
-
+			$("#hubWidget .content").removeClass("loading");
 			$("#hubWidget .content").html($("<ul>"));
 
 			$.each(articles, function(i, article) {
