@@ -4,6 +4,12 @@
 	.header {
 		border-bottom: 5px solid #000;
 	}
+	.content {
+		&.loading {
+			min-height: 20px;
+			background: url("images/loading-light.gif") top center no-repeat;
+		}
+	}
 	a {
 		color: #000;
 		&:hover {
@@ -12,5 +18,13 @@
 	}
 	.pubdate {
 		color: #aaa;
+	}
+	.hubpower {
+		height: 20px;
+		width: 100%;
+		background: url("images/hubpower-light.gif") top right no-repeat;
+		span {
+			display: none;
+		}
 	}
 }

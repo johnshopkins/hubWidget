@@ -5,6 +5,10 @@
 #hubWidget .header {
   border-bottom: 5px solid #fff;
 }
+#hubWidget .content.loading {
+  min-height: 20px;
+  background: url("images/loading-dark.gif") top center no-repeat;
+}
 #hubWidget a {
   color: #fff;
 }
@@ -13,6 +17,14 @@
 }
 #hubWidget .pubdate {
   color: #fff;
+}
+#hubWidget .hubpower {
+  height: 20px;
+  width: 100%;
+  background: url("images/hubpower-dark.gif") top right no-repeat;
+}
+#hubWidget .hubpower span {
+  display: none;
 }
 #hubWidget {
   padding: 15px;
