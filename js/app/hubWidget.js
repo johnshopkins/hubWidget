@@ -3,8 +3,15 @@ var hubWidget = (function ($, hubJS) {
 	/**
 	 * Hub widget object for reference
 	 * inside return object.
+	 * @type {Object}
 	 */
 	var _library;
+
+	/**
+	 * Title of widget
+	 * @type {String}
+	 */
+	var _widgetTitle = "News from the Hub";
 
 	return {
 
@@ -15,7 +22,12 @@ var hubWidget = (function ($, hubJS) {
 		init: function() {
 
 			// Initial HTML
-			$("#hubWidget").html("<div class=\"header\">News</div><div class=\"content loading\"></div><div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div>");
+			var html = "<div class=\"header\">" + _widgetTitle + "</div>";
+			html += "<div class=\"content loading\"></div>";
+			html += "<div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div>";
+
+
+			$("#hubWidget").html(html);
 
 			// Save off hubWidget for use in the return object
 			_library = this;
@@ -57,8 +69,6 @@ var hubWidget = (function ($, hubJS) {
                 var html = html + "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
 				$("#hubWidget ul").append(html);
 			});
-
-			
 		},
 
 		/**
