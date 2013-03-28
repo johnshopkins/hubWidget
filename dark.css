@@ -1,5 +1,5 @@
 #hubWidget {
-  background: #000;
+  background: #222;
   color: #fff;
 }
 #hubWidget .header {
@@ -21,7 +21,7 @@
 #hubWidget .hubpower {
   height: 20px;
   width: 100%;
-  background: url("images/hubpower-dark.gif") top right no-repeat;
+  background: url("images/hubpower-dark.png") top right no-repeat;
 }
 #hubWidget .hubpower span {
   display: none;
