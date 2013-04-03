@@ -20,6 +20,12 @@ var hubWidget = (function ($, hubJS) {
 	 */
 	var _data = {};
 
+	/**
+	 * Default number of articles to get
+	 * @type {Number}
+	 */
+	var _defaultCount = 5;
+
 	return {
 
 		/**
@@ -32,6 +38,7 @@ var hubWidget = (function ($, hubJS) {
 
 			// Extract data attributes
 			_data.title = $widget.attr("data-title");
+			_data.count = $widget.attr("data-count");
 			_data.topics = $widget.attr("data-topics");
 			_data.tags = $widget.attr("data-tags");
 
@@ -60,15 +67,7 @@ var hubWidget = (function ($, hubJS) {
 		 */
 		getArticles: function() {
 
-			var data = { per_page: 5 };
-
-			if (_data.topics) {
-				data.topics = _data.topics.replace(/\s/g, "");
-			}
-
-			if (_data.tags) {
-				data.tags = _data.tags.replace(/\s/g, "");
-			}
+			var data = _library.utility.compileData();
 
 			hubJS.articles.find(data, function(payload) {
 				if (!payload.error) {
@@ -112,6 +111,20 @@ var hubWidget = (function ($, hubJS) {
 			getMonth: function(dateObject) {
 				var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 				return monthNames[dateObject.getMonth()];
+			},
+			compileData: function() {
+				var data = {};
+				data.per_page = $.isNumeric(_data.count) ? _data.count : _defaultCount;
+
+				if (_data.topics) {
+					data.topics = _data.topics.replace(/\s/g, "");
+				}
+
+				if (_data.tags) {
+					data.tags = _data.tags.replace(/\s/g, "");
+				}
+
+				return data;
 			}
 		},
 		displayError: function() {
