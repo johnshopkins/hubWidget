@@ -14,22 +14,11 @@ var hubWidget = (function ($, hubJS) {
 	var _library;
 
 	/**
-	 * Title of widget
-	 * @type {String}
+	 * Holds the various data attributes passed
+	 * to the widget
+	 * @type {Object}
 	 */
-	var _title;
-
-	/**
-	 * Comma-separated list of topic slugs or IDs
-	 * @type {String}
-	 */
-	var _topics;
-
-	/**
-	 * Comma-separated list of tag slugs or IDs
-	 * @type {String}
-	 */
-	var _tags;
+	var _data = {};
 
 	return {
 
@@ -42,12 +31,12 @@ var hubWidget = (function ($, hubJS) {
 			$widget = $("#hubWidget");
 
 			// Extract data attributes
-			_title = $widget.attr("data-title");
-			_topics = $widget.attr("data-topics");
-			_tags = $widget.attr("data-tags");
+			_data.title = $widget.attr("data-title");
+			_data.topics = $widget.attr("data-topics");
+			_data.tags = $widget.attr("data-tags");
 
 			// Initial HTML
-			var html = "<div class=\"header\">" + _title + "</div>";
+			var html = "<div class=\"header\">" + _data.title + "</div>";
 			html += "<div class=\"content loading\"></div>";
 			html += "<div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div>";
 
@@ -73,12 +62,12 @@ var hubWidget = (function ($, hubJS) {
 
 			var data = { per_page: 5 };
 
-			if (_topics) {
-				data.topics = _topics.replace(/\s/g, "");
+			if (_data.topics) {
+				data.topics = _data.topics.replace(/\s/g, "");
 			}
 
-			if (_tags) {
-				data.tags = _tags.replace(/\s/g, "");
+			if (_data.tags) {
+				data.tags = _data.tags.replace(/\s/g, "");
 			}
 
 			hubJS.articles.find(data, function(payload) {
