@@ -1,8 +1,14 @@
 var hubWidget = (function ($, hubJS) {
 
 	/**
-	 * Hub widget object for reference
-	 * inside return object.
+	 * Widget container div
+	 * @type {Object}
+	 */
+	var $widget;
+
+	/**
+	 * hubWidget object for reference
+	 * inside return object below.
 	 * @type {Object}
 	 */
 	var _library;
@@ -11,7 +17,19 @@ var hubWidget = (function ($, hubJS) {
 	 * Title of widget
 	 * @type {String}
 	 */
-	var _widgetTitle = "News from the Hub";
+	var _title;
+
+	/**
+	 * Comma-separated list of topic slugs or IDs
+	 * @type {String}
+	 */
+	var _topics;
+
+	/**
+	 * Comma-separated list of tag slugs or IDs
+	 * @type {String}
+	 */
+	var _tags;
 
 	return {
 
@@ -21,20 +39,27 @@ var hubWidget = (function ($, hubJS) {
 		 */
 		init: function() {
 
+			$widget = $("#hubWidget");
+
+			// Extract data attributes
+			_title = $widget.attr("data-title");
+			_topics = $widget.attr("data-topics");
+			_tags = $widget.attr("data-tags");
+
 			// Initial HTML
-			var html = "<div class=\"header\">" + _widgetTitle + "</div>";
+			var html = "<div class=\"header\">" + _title + "</div>";
 			html += "<div class=\"content loading\"></div>";
 			html += "<div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div>";
 
 
-			$("#hubWidget").html(html);
+			$widget.html(html);
 
 			// Save off hubWidget for use in the return object
 			_library = this;
 
 			// Initialize hubJS
 			hubJS.init({ v: 0 });
-			hubJS.baseUrl = "http://api.hub.jhu.edu/";
+			hubJS.baseUrl = "http://local.api.hub.jhu.edu/";
 
 			return _library;
 		},
@@ -45,7 +70,18 @@ var hubWidget = (function ($, hubJS) {
 		 * @return {object} hubWidget
 		 */
 		getArticles: function() {
-			hubJS.articles.find({ per_page: 5 }, function(payload) {
+
+			var data = { per_page: 5 };
+
+			if (_topics) {
+				data.topics = _topics.replace(/\s/g, "");
+			}
+
+			if (_tags) {
+				data.tags = _tags.replace(/\s/g, "");
+			}
+
+			hubJS.articles.find(data, function(payload) {
 				if (!payload.error) {
 					_library.populateWidget(payload._embedded.articles);
 				} else {
@@ -61,13 +97,13 @@ var hubWidget = (function ($, hubJS) {
 		 * @return {object} hubWidget
 		 */
 		populateWidget: function(articles) {
-			$("#hubWidget .content").removeClass("loading");
-			$("#hubWidget .content").html($("<ul>"));
+			$widget.find(".content").removeClass("loading");
+			$widget.find(".content").html($("<ul>"));
 
 			$.each(articles, function(i, article) {
 				var html = "<li><p class=\"headline\"><a href=\"" + article.url +"\">" + article.headline +"</a></p>";
                 var html = html + "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
-				$("#hubWidget ul").append(html);
+				$widget.find("ul").append(html);
 			});
 		},
 
@@ -90,7 +126,7 @@ var hubWidget = (function ($, hubJS) {
 			}
 		},
 		displayError: function() {
-			$("#hubWidget .content").html("<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news.</p>");
+			$widget.find(".content").html("<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news.</p>");
 		}
 	}
 })(jQuery, hubJS);
