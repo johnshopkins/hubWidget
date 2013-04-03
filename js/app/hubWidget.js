@@ -117,14 +117,17 @@ var hubWidget = (function ($, hubJS) {
 				data.per_page = $.isNumeric(_data.count) ? _data.count : _defaultCount;
 
 				if (_data.topics) {
-					data.topics = _data.topics.replace(/\s/g, "");
+					data.topics = _library.utility.cleanList(_data.topics);
 				}
 
 				if (_data.tags) {
-					data.tags = _data.tags.replace(/\s/g, "");
+					data.tags = _library.utility.cleanList(_data.tags);
 				}
 
 				return data;
+			},
+			cleanList: function (string) {
+				return string.replace(/\s/g, "");
 			}
 		},
 		displayError: function() {
