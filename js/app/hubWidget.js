@@ -115,6 +115,14 @@ var hubWidget = (function ($, hubJS) {
 		},
 
 		/**
+		 * Displays an error if non results were returned.
+		 * @return null
+		 */
+		displayError: function() {
+			_library.widget.find(".content").html("<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news.</p>");
+		},
+
+		/**
 		 * Set of utiltiy functions
 		 * @type {Object}
 		 */
@@ -148,9 +156,6 @@ var hubWidget = (function ($, hubJS) {
 			cleanList: function (string) {
 				return string.replace(/\s/g, "");
 			}
-		},
-		displayError: function() {
-			_library.widget.find(".content").html("<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news.</p>");
 		}
 	}
 })(jQuery, hubJS);
