@@ -6,25 +6,29 @@
 	}
 	.content {
 		&.loading {
-			min-height: 20px;
-			background: url("images/loading-light.gif") top center no-repeat;
+			background: url("../images/loading-light.gif") top center no-repeat;
 		}
 	}
 	a {
 		color: #000;
 		&:hover {
-			color: #5091cd;
+			color: @hopkins_blue;
 		}
 	}
 	.pubdate {
 		color: #aaa;
 	}
 	.hubpower {
-		height: 20px;
-		width: 100%;
-		background: url("images/hubpower-light.png") top right no-repeat;
-		span {
-			display: none;
+		.link {
+			a {
+				color: @hopkins_blue;
+				&:hover {
+					color: #aaa;
+				}
+			}
+		}
+		.image {
+			background: url("../images/hubpower-light.png") top right no-repeat;
 		}
 	}
 }

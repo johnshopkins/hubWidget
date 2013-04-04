@@ -45,7 +45,7 @@ var hubWidget = (function ($, hubJS) {
 			// Initial HTML
 			var html = "<div class=\"header\">" + _data.title + "</div>";
 			html += "<div class=\"content loading\"></div>";
-			html += "<div class=\"hubpower\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div>";
+			html += "<div class=\"hubpower clearfix\"><div class=\"link\"><a href=\"http://hub.jhu.edu\">http://hub.jhu.edu</a></div><div class=\"image\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div></div>";
 
 
 			$widget.html(html);
