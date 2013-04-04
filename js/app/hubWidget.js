@@ -40,30 +40,41 @@ var hubWidget = (function ($, hubJS) {
 		 */
 		init: function() {
 
-			// Save off hubWidget for use in the return object
 			_library = this;
 
 			_library.widget = $("#hubWidget");
-
-			// Extract data attributes
-			_library.data.title = _library.widget.attr("data-title") || _library.defaultTitle;
-			_library.data.count = _library.widget.attr("data-count") || _library.defaultCount;
-			_library.data.topics = _library.widget.attr("data-topics");
-			_library.data.tags = _library.widget.attr("data-tags");
-
-			// Initial HTML
-			var html = "<div class=\"header\">" + _library.data.title + "</div>";
-			html += "<div class=\"content loading\"></div>";
-			html += "<div class=\"hubpower clearfix\"><div class=\"link\"><a href=\"http://hub.jhu.edu\">http://hub.jhu.edu</a></div><div class=\"image\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div></div>";
-
-
-			_library.widget.html(html);
+			_library.extractDataAttrs();
+			_library.widget.html(_library.createInitialHtml());
 
 			// Initialize hubJS
 			hubJS.init({ v: 0 });
 			hubJS.baseUrl = "http://local.api.hub.jhu.edu/";
 
 			return _library;
+		},
+
+		/**
+		 * Extracts the data attributes from the widget div
+		 * for use in creating the widgets appearance and
+		 * creating the data to send to hubJS.
+		 * @return null
+		 */
+		extractDataAttrs: function() {
+			_library.data.title = _library.widget.attr("data-title") || _library.defaultTitle;
+			_library.data.count = _library.widget.attr("data-count") || _library.defaultCount;
+			_library.data.topics = _library.widget.attr("data-topics");
+			_library.data.tags = _library.widget.attr("data-tags");
+		},
+
+		/**
+		 * Creates the HTML that initially populares the widget
+		 * @return {string} The HTML
+		 */
+		createInitialHtml: function() {
+			var html = "<div class=\"header\">" + _library.data.title + "</div>";
+			html += "<div class=\"content loading\"></div>";
+			html += "<div class=\"hubpower clearfix\"><div class=\"link\"><a href=\"http://hub.jhu.edu\">http://hub.jhu.edu</a></div><div class=\"image\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div></div>";
+			return html;
 		},
 
 		/**
