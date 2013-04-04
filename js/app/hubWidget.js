@@ -60,10 +60,12 @@ var hubWidget = (function ($, hubJS) {
 		 * @return null
 		 */
 		extractDataAttrs: function() {
-			_library.data.title = _library.widget.attr("data-title") || _library.defaultTitle;
-			_library.data.count = _library.widget.attr("data-count") || _library.defaultCount;
-			_library.data.topics = _library.widget.attr("data-topics");
-			_library.data.tags = _library.widget.attr("data-tags");
+			_library.data = {
+				count: parseInt(_library.widget.attr("data-count")) || _library.defaultCount,
+				tags: _library.widget.attr("data-tags") || null,
+				title: _library.widget.attr("data-title") || _library.defaultTitle,
+				topics: _library.widget.attr("data-topics") || null
+			};
 		},
 
 		/**
