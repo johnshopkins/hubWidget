@@ -21,8 +21,14 @@ var hubWidget = (function ($, hubJS) {
 	var _data = {};
 
 	/**
+	 * Default widget title 
+	 * @type {String}
+	 */
+	var _defaultTitle = "News from the Hub";
+
+	/**
 	 * Default number of articles to get
-	 * @type {Number}
+	 * @type {Integer}
 	 */
 	var _defaultCount = 5;
 
@@ -37,8 +43,8 @@ var hubWidget = (function ($, hubJS) {
 			$widget = $("#hubWidget");
 
 			// Extract data attributes
-			_data.title = $widget.attr("data-title");
-			_data.count = $widget.attr("data-count");
+			_data.title = $widget.attr("data-title") || _defaultTitle;
+			_data.count = $widget.attr("data-count") || _defaultCount;
 			_data.topics = $widget.attr("data-topics");
 			_data.tags = $widget.attr("data-tags");
 
