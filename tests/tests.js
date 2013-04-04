@@ -5,6 +5,22 @@
  * displayError
  */
 
+test("hubWidget.setSettings() : default", function () {
+	hubWidget.setSettings({});
+	
+	var expected = { container: "#hubWidget" };
+
+	equal(JSON.stringify(hubWidget.userSettings), JSON.stringify(expected));
+});
+
+test("hubWidget.setSettings() : override container", function () {
+	hubWidget.setSettings({ container: "#somethingElse"});
+	
+	var expected = { container: "#somethingElse" };
+
+	equal(JSON.stringify(hubWidget.userSettings), JSON.stringify(expected));
+});
+
 test("hubWidget.extractDataAttrs() - no attributes", function () {
 	hubWidget.widget = $("<div id=\"hubWidget\"></div>");
 	hubWidget.extractDataAttrs();

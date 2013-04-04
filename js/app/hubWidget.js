@@ -7,7 +7,21 @@ var hubWidget = (function ($, hubJS) {
 	 */
 	var _library;
 
+	/**
+	 * Default settings
+	 * @type {Object}
+	 */
+	var _defaultSettings = {
+		container: "#hubWidget"
+	};
+
 	return {
+
+		/**
+		 * User defined settings
+		 * @type {Object}
+		 */
+		userSettings: {},
 
 		/**
 		 * Holds the various data attributes passed
@@ -38,11 +52,15 @@ var hubWidget = (function ($, hubJS) {
 		 * Initialize the hub widget
 		 * @return {object} hubWidget
 		 */
-		init: function() {
+		init: function(settings) {
 
 			_library = this;
+			
+			// Settings
+			_library.setSettings(settings);
+			_library.widget = $(_library.userSettings.container);
 
-			_library.widget = $("#hubWidget");
+			// Create base widget
 			_library.extractDataAttrs();
 			_library.widget.html(_library.createInitialHtml());
 
@@ -51,6 +69,10 @@ var hubWidget = (function ($, hubJS) {
 			hubJS.baseUrl = "http://local.api.hub.jhu.edu/";
 
 			return _library;
+		},
+
+		setSettings: function(settings) {
+			_library.userSettings = $.extend({}, _defaultSettings, settings);
 		},
 
 		/**
@@ -161,5 +183,5 @@ var hubWidget = (function ($, hubJS) {
 })(jQuery, hubJS);
 
 jQuery(document).ready(function ($) {
-    hubWidget.init().getArticles();
+    hubWidget.init({ container: "#hubWidget"}).getArticles();
 });
