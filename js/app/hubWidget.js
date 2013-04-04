@@ -14,13 +14,6 @@ var hubWidget = (function ($, hubJS) {
 	var _library;
 
 	/**
-	 * Holds the various data attributes passed
-	 * to the widget
-	 * @type {Object}
-	 */
-	var _data = {};
-
-	/**
 	 * Default widget title 
 	 * @type {String}
 	 */
@@ -35,29 +28,36 @@ var hubWidget = (function ($, hubJS) {
 	return {
 
 		/**
+		 * Holds the various data attributes passed
+		 * to the widget
+		 * @type {Object}
+		 */
+		data: {},
+
+		/**
 		 * Initialize the hub widget
 		 * @return {object} hubWidget
 		 */
 		init: function() {
 
+			// Save off hubWidget for use in the return object
+			_library = this;
+
 			$widget = $("#hubWidget");
 
 			// Extract data attributes
-			_data.title = $widget.attr("data-title") || _defaultTitle;
-			_data.count = $widget.attr("data-count") || _defaultCount;
-			_data.topics = $widget.attr("data-topics");
-			_data.tags = $widget.attr("data-tags");
+			_library.data.title = $widget.attr("data-title") || _defaultTitle;
+			_library.data.count = $widget.attr("data-count") || _defaultCount;
+			_library.data.topics = $widget.attr("data-topics");
+			_library.data.tags = $widget.attr("data-tags");
 
 			// Initial HTML
-			var html = "<div class=\"header\">" + _data.title + "</div>";
+			var html = "<div class=\"header\">" + _library.data.title + "</div>";
 			html += "<div class=\"content loading\"></div>";
 			html += "<div class=\"hubpower clearfix\"><div class=\"link\"><a href=\"http://hub.jhu.edu\">http://hub.jhu.edu</a></div><div class=\"image\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div></div>";
 
 
 			$widget.html(html);
-
-			// Save off hubWidget for use in the return object
-			_library = this;
 
 			// Initialize hubJS
 			hubJS.init({ v: 0 });
@@ -120,14 +120,14 @@ var hubWidget = (function ($, hubJS) {
 			},
 			compileData: function() {
 				var data = {};
-				data.per_page = $.isNumeric(_data.count) ? _data.count : _defaultCount;
+				data.per_page = $.isNumeric(_library.data.count) ? _library.data.count : _defaultCount;
 
-				if (_data.topics) {
-					data.topics = _library.utility.cleanList(_data.topics);
+				if (_library.data.topics) {
+					data.topics = _library.utility.cleanList(_library.data.topics);
 				}
 
-				if (_data.tags) {
-					data.tags = _library.utility.cleanList(_data.tags);
+				if (_library.data.tags) {
+					data.tags = _library.utility.cleanList(_library.data.tags);
 				}
 
 				return data;
