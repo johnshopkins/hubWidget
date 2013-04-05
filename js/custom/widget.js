@@ -37,7 +37,7 @@ if (!jqExists("1.8.*")) {
 	
 	getScript("//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js", function() {
 		
-		getScript("http://hub.jhu.edu/assets/shared/js/jquery.hubwidget.min.js", function () {
+		getScript("http://hub.jhu.edu/assets/shared/js/jquery.hubwidget.1.0.min.js", function () {
 			jQuery.noConflict();
 			jQuery(document).ready(function ($) {
 				$("#hubWidget").hubWidget();
