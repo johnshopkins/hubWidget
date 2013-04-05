@@ -2,15 +2,6 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8248",
   "files" : {
-    "\/css\/light.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/light.css",
-      "outputAbbreviatedPath" : "\/No Output Path",
-      "fileType" : 16
-    },
     "\/css\/less\/color-light.less" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -24,24 +15,13 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/images\/hubpower-dark.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/hubpower-dark.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/hubpower-dark.png",
-      "initialSize" : 857,
-      "fileType" : 8192
-    },
-    "\/css\/dark.css" : {
+    "\/css\/widget-dark.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/dark.css",
-      "outputAbbreviatedPath" : "\/No Output Path",
+      "inputAbbreviatedPath" : "\/css\/widget-dark.css",
+      "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
     "\/css\/less\/color-dark.less" : {
@@ -67,17 +47,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/tests\/tests.min.js",
       "fileType" : 64
-    },
-    "\/images\/hubpower-light.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/hubpower-light.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/hubpower-light.png",
-      "initialSize" : 855,
-      "fileType" : 8192
     },
     "\/examples\/plugin.html" : {
       "ignoreWasSetByUser" : 0,
@@ -125,16 +94,18 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/js\/manifests\/hubwidget.js" : {
+    "\/css\/less\/structure.less" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/manifests\/hubwidget.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/hubwidget.min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/css\/less\/structure.less",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/structure.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/css\/less\/variables.less" : {
       "ignoreWasSetByUser" : 0,
@@ -149,6 +120,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/js\/manifests\/hubwidget.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/manifests\/hubwidget.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/hubwidget.min.js",
+      "fileType" : 64
+    },
     "\/tests\/widgetCreator\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -158,15 +140,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/css\/less\/structure.less" : {
+    "\/css\/less\/widget-dark.less" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/structure.less",
+      "inputAbbreviatedPath" : "\/css\/less\/widget-dark.less",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/structure.css",
+      "outputAbbreviatedPath" : "\/css\/widget-dark.css",
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
@@ -193,16 +175,16 @@
       "outputAbbreviatedPath" : "\/js\/hubJS.min.js",
       "fileType" : 64
     },
-    "\/js\/hubwidget.min.js" : {
+    "\/images\/widget-hubpower-light.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/hubwidget.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/hubwidget.min.min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/images\/widget-hubpower-light.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/widget-hubpower-light.png",
+      "initialSize" : 855,
+      "fileType" : 8192
     },
     "\/js\/manifests\/jquery.hubwidget.js" : {
       "ignoreWasSetByUser" : 0,
@@ -215,6 +197,17 @@
       "outputAbbreviatedPath" : "\/js\/jquery.hubwidget.min.js",
       "fileType" : 64
     },
+    "\/js\/hubwidget.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/hubwidget.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/hubwidget.min.min.js",
+      "fileType" : 64
+    },
     "\/examples\/widget.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -223,6 +216,26 @@
       "inputAbbreviatedPath" : "\/examples\/widget.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/images\/widget-hubpower-dark.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/widget-hubpower-dark.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/widget-hubpower-dark.png",
+      "initialSize" : 857,
+      "fileType" : 8192
+    },
+    "\/css\/widget-light.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/widget-light.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/tests\/jqExists\/with.html" : {
       "ignoreWasSetByUser" : 0,
@@ -244,6 +257,19 @@
       "outputAbbreviatedPath" : "\/js\/jqueryExists.min.js",
       "fileType" : 64
     },
+    "\/css\/less\/widget-light.less" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/less\/widget-light.less",
+      "outputStyle" : 2,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/widget-light.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
     "\/js\/custom\/widget.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -254,32 +280,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/widget.min.js",
       "fileType" : 64
-    },
-    "\/css\/less\/dark.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/dark.less",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/dark.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/css\/less\/light.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/light.less",
-      "outputStyle" : 2,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/light.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
     },
     "\/tests\/jqExists\/without.html" : {
       "ignoreWasSetByUser" : 0,
