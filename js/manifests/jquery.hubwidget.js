@@ -1,6 +1,6 @@
 /**
- * @codekit-prepend "lib/hubJS.js"
- * @codekit-prepend "custom/widgetCreator.js"
+ * @codekit-prepend "../lib/hubJS.js"
+ * @codekit-prepend "../custom/widgetCreator.js"
  */
 
 (function( $ ){
