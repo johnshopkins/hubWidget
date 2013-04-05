@@ -1,33 +1,46 @@
 # Hub widget
 
-Embeds articles from the Hub on your website.
+Embeds articles from the Hub on your website. Currently, the widget is dependent on jQuery, but a future release will be jQuery-independent. The widget is available in two forms:
 
+* __Drop-in widget__: Drop a couple lines of code onto your website and the widget will automatically populate in the area in which it was dropped. If jQuery version 1.8 or greater is not already loaded on your website, the widget will load it automatically.
 
-## Dependencies
+* __jQuery plugin__: If you are already using jQuery on your site and have the knowledge to implement a jQuery plugin, we recommend going this route.
 
-In order for the Hub widget to work, you will need to also include the following on your website:
-
-1. jQuery >= 1.8.0
 
 ## Basic usage
 
-Basic usage of the Hub widget will display the five most recent articles published on the Hub with a header of "News from the Hub" with a light color theme.
+Basic usage of the Hub widget will display the five most recent articles published on the Hub with a header of "News from the Hub."
+
+#### Widget
+
+Drop the following code in the HTML of your website where you want the widget to display:
 
 ```html
-<script src="http://hub.jhu.edu/assets/js/hubWidget.js"></script>
+<script src="http://hub.jhu.edu/assets/shared/js/hubwidget.1.0.min.js"></script>
 <div id="hubWidget"></div>
 ```
 
-## Themes
+#### Plugin
 
-Both light and dark CSS themes are available for you to style the Hub Widget. You may also write your own styles so that the widget matches the rest of your site.
+Include jQuery version 1.8 or greater and the widget plugin:
 
 ```html
-<!-- light theme -->
-<link rel="stylesheet" href="http://hub.jhu.edu/assets/css/light.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="http://hub.jhu.edu/assets/shared/js/jquery.hubwidget.1.0.min.js?v=1.0.4"></script>
+```
 
-<!-- dark theme -->
-<link rel="stylesheet" href="http://hub.jhu.edu/assets/css/dark.css" />
+Create a div in the HTML to house the widget:
+
+```html
+<div id="hubWidget"></div>
+```
+
+Call the plugin to render the widget:
+
+```javascript
+jQuery(document).ready(function ($) {
+    $("#hubWidget").hubWidget();
+});
 ```
 
 
@@ -68,4 +81,17 @@ Retrieves 2 articles from a tag:
 
 ```html
 <div id="hubWidget" data-count="7" data-tags="film-and-media-studies"></div>
+```
+
+
+## Themes
+
+Both light and dark CSS themes are available for you to style the Hub Widget. You may also write your own styles so that the widget matches the rest of your site.
+
+```html
+<!-- light theme -->
+<link rel="stylesheet" href="http://hub.jhu.edu/assets/css/light.css" />
+
+<!-- dark theme -->
+<link rel="stylesheet" href="http://hub.jhu.edu/assets/css/dark.css" />
 ```
