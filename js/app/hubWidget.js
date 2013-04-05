@@ -41,8 +41,6 @@ var widgetCreator = (function ($, hubJS) {
 		create: function(widgetDiv) {
 
 			_library = this;
-			
-			// Settings
 			_library.widget = widgetDiv;
 
 			// Create base widget
@@ -51,7 +49,7 @@ var widgetCreator = (function ($, hubJS) {
 
 			// Initialize hubJS
 			hubJS.init({ v: 0 });
-			hubJS.baseUrl = "http://local.api.hub.jhu.edu/";
+			hubJS.baseUrl = "http://api.hub.jhu.edu/";
 
 			_library.getArticles();
 
