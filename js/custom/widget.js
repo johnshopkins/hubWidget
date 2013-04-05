@@ -1,23 +1,23 @@
 // From http://css-tricks.com/snippets/jquery/load-jquery-only-if-not-present/
 if (!jqExists("1.8.*")) {
 
-	if (typeof $ == 'function') {
+	if (typeof $ == "function") {
 		// warning, global var
 		thisPageUsingOtherJSLibrary = true;
 	}
 	
 	function getScript(url, success) {
 	
-		var script = document.createElement('script');
+		var script = document.createElement("script");
 		script.src = url;
 		
-		var head = document.getElementsByTagName('head')[0];
+		var head = document.getElementsByTagName("head")[0];
 		var done = false;
 		
 		// Attach handlers for all browsers
 		script.onload = script.onreadystatechange = function() {
 		
-			if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+			if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
 			
 				done = true;
 				
