@@ -5,25 +5,9 @@
  * displayError
  */
 
-test("hubWidget.setSettings() : default", function () {
-	hubWidget.setSettings({});
-	
-	var expected = { container: "#hubWidget" };
-
-	equal(JSON.stringify(hubWidget.userSettings), JSON.stringify(expected));
-});
-
-test("hubWidget.setSettings() : override container", function () {
-	hubWidget.setSettings({ container: "#somethingElse"});
-	
-	var expected = { container: "#somethingElse" };
-
-	equal(JSON.stringify(hubWidget.userSettings), JSON.stringify(expected));
-});
-
-test("hubWidget.extractDataAttrs() - no attributes", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\"></div>");
-	hubWidget.extractDataAttrs();
+test("widgetCreator.extractDataAttrs() - no attributes", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\"></div>");
+	widgetCreator.extractDataAttrs();
 
 	var expected = {
 		count: 5,
@@ -32,12 +16,12 @@ test("hubWidget.extractDataAttrs() - no attributes", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(hubWidget.data), JSON.stringify(expected));
+	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
 });
 
-test("hubWidget.extractDataAttrs() - override count", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-count=\"10\"></div>");
-	hubWidget.extractDataAttrs();
+test("widgetCreator.extractDataAttrs() - override count", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-count=\"10\"></div>");
+	widgetCreator.extractDataAttrs();
 
 	var expected = {
 		count: 10,
@@ -46,12 +30,12 @@ test("hubWidget.extractDataAttrs() - override count", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(hubWidget.data), JSON.stringify(expected));
+	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
 });
 
-test("hubWidget.extractDataAttrs() - custom title", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-title=\"News\"></div>");
-	hubWidget.extractDataAttrs();
+test("widgetCreator.extractDataAttrs() - custom title", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-title=\"News\"></div>");
+	widgetCreator.extractDataAttrs();
 
 	var expected = {
 		count: 5,
@@ -60,12 +44,12 @@ test("hubWidget.extractDataAttrs() - custom title", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(hubWidget.data), JSON.stringify(expected));
+	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
 });
 
-test("hubWidget.extractDataAttrs() - some tags", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-tags=\"one, two, three\"></div>");
-	hubWidget.extractDataAttrs();
+test("widgetCreator.extractDataAttrs() - some tags", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-tags=\"one, two, three\"></div>");
+	widgetCreator.extractDataAttrs();
 
 	var expected = {
 		count: 5,
@@ -74,14 +58,14 @@ test("hubWidget.extractDataAttrs() - some tags", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(hubWidget.data), JSON.stringify(expected));
+	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
 });
 
-test("hubWidget.extractDataAttrs() - some topics", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-topics=\"four, five, six\"></div>");
-	hubWidget.extractDataAttrs();
+test("widgetCreator.extractDataAttrs() - some topics", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-topics=\"four, five, six\"></div>");
+	widgetCreator.extractDataAttrs();
 
-	console.log(hubWidget.data);
+	console.log(widgetCreator.data);
 
 	var expected = {
 		count: 5,
@@ -90,57 +74,57 @@ test("hubWidget.extractDataAttrs() - some topics", function () {
 		topics: "four, five, six"
 	};
 
-	equal(JSON.stringify(hubWidget.data), JSON.stringify(expected));
+	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
 });
 
-test("hubWidget.createInitialHtml() - default args", function () {
-	hubWidget.data = {
+test("widgetCreator.createInitialHtml() - default args", function () {
+	widgetCreator.data = {
 		count: 5,
 		tags: null,
 		title: "News from the Hub",
 		topics: null
 	};
 
-	var output = hubWidget.createInitialHtml();
+	var output = widgetCreator.createInitialHtml();
 	var expected = '<div class="header">News from the Hub</div><div class="content loading"></div><div class="hubpower clearfix"><div class="link"><a href="http://hub.jhu.edu">http://hub.jhu.edu</a></div><div class="image"><a href="http://hub.jhu.edu"><span>Powered by the Hub</span></a></div></div>';
 	
 	equal(output, expected);
 });
 
-test("hubWidget.createInitialHtml() - custom title", function () {
-	hubWidget.data = {
+test("widgetCreator.createInitialHtml() - custom title", function () {
+	widgetCreator.data = {
 		count: 5,
 		tags: null,
 		title: "News",
 		topics: null
 	};
 
-	var output = hubWidget.createInitialHtml();
+	var output = widgetCreator.createInitialHtml();
 	var expected = '<div class="header">News</div><div class="content loading"></div><div class="hubpower clearfix"><div class="link"><a href="http://hub.jhu.edu">http://hub.jhu.edu</a></div><div class="image"><a href="http://hub.jhu.edu"><span>Powered by the Hub</span></a></div></div>';
 	
 	equal(output, expected);
 });
 
-test("hubWidget.utility.getPublishDate()", function () {
+test("widgetCreator.utility.getPublishDate()", function () {
 	// Also tests getMonth() indirectly
 	var input = 1365098689;
-	var output = hubWidget.utility.getPublishDate(input);
+	var output = widgetCreator.utility.getPublishDate(input);
 	equal(output, "April 4, 2013");
 });
 
-test("hubWidget.utility.cleanList()", function () {
+test("widgetCreator.utility.cleanList()", function () {
 	var input = "one,two,three";
-	var output = hubWidget.utility.cleanList(input);
+	var output = widgetCreator.utility.cleanList(input);
 	equal(output, "one,two,three");
 
 	input = "one, two, three";
-	output = hubWidget.utility.cleanList(input);
+	output = widgetCreator.utility.cleanList(input);
 	equal(output, "one,two,three");
 });
 
-test("hubWidget.utility.compileData() - no attributes", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\"></div>");
-	var output = hubWidget.utility.compileData();
+test("widgetCreator.utility.compileData() - no attributes", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\"></div>");
+	var output = widgetCreator.utility.compileData();
 
 	var expected = {
 		per_page: 5,
@@ -149,10 +133,10 @@ test("hubWidget.utility.compileData() - no attributes", function () {
 	equal(JSON.stringify(output), JSON.stringify(expected));
 });
 
-test("hubWidget.utility.compileData() - override count", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-count=\"10\"></div>");
-	hubWidget.extractDataAttrs();
-	var output = hubWidget.utility.compileData();
+test("widgetCreator.utility.compileData() - override count", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-count=\"10\"></div>");
+	widgetCreator.extractDataAttrs();
+	var output = widgetCreator.utility.compileData();
 
 	var expected = {
 		per_page: 10,
@@ -161,10 +145,10 @@ test("hubWidget.utility.compileData() - override count", function () {
 	equal(JSON.stringify(output), JSON.stringify(expected));
 });
 
-test("hubWidget.utility.compileData() - custom title", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-title=\"News\"></div>");
-	hubWidget.extractDataAttrs();
-	var output = hubWidget.utility.compileData();
+test("widgetCreator.utility.compileData() - custom title", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-title=\"News\"></div>");
+	widgetCreator.extractDataAttrs();
+	var output = widgetCreator.utility.compileData();
 
 	var expected = {
 		per_page: 5
@@ -173,10 +157,10 @@ test("hubWidget.utility.compileData() - custom title", function () {
 	equal(JSON.stringify(output), JSON.stringify(expected));
 });
 
-test("hubWidget.extractDataAttrs() - some tags", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-tags=\"one, two, three\"></div>");
-	hubWidget.extractDataAttrs();
-	var output = hubWidget.utility.compileData();
+test("widgetCreator.extractDataAttrs() - some tags", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-tags=\"one, two, three\"></div>");
+	widgetCreator.extractDataAttrs();
+	var output = widgetCreator.utility.compileData();
 
 	var expected = {
 		per_page: 5,
@@ -186,10 +170,10 @@ test("hubWidget.extractDataAttrs() - some tags", function () {
 	equal(JSON.stringify(output), JSON.stringify(expected));
 });
 
-test("hubWidget.utility.compileData() - some topics", function () {
-	hubWidget.widget = $("<div id=\"hubWidget\" data-topics=\"four, five, six\"></div>");
-	hubWidget.extractDataAttrs();
-	var output = hubWidget.utility.compileData();
+test("widgetCreator.utility.compileData() - some topics", function () {
+	widgetCreator.widget = $("<div id=\"widgetCreator\" data-topics=\"four, five, six\"></div>");
+	widgetCreator.extractDataAttrs();
+	var output = widgetCreator.utility.compileData();
 
 	var expected = {
 		per_page: 5,

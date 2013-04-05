@@ -1,4 +1,4 @@
-var hubWidget = (function ($, hubJS) {
+var widgetCreator = (function ($, hubJS) {
 
 	/**
 	 * hubWidget object for reference
@@ -7,21 +7,7 @@ var hubWidget = (function ($, hubJS) {
 	 */
 	var _library;
 
-	/**
-	 * Default settings
-	 * @type {Object}
-	 */
-	var _defaultSettings = {
-		container: "#hubWidget"
-	};
-
 	return {
-
-		/**
-		 * User defined settings
-		 * @type {Object}
-		 */
-		userSettings: {},
 
 		/**
 		 * Holds the various data attributes passed
@@ -52,13 +38,12 @@ var hubWidget = (function ($, hubJS) {
 		 * Initialize the hub widget
 		 * @return {object} hubWidget
 		 */
-		init: function(settings) {
+		create: function(widgetDiv) {
 
 			_library = this;
 			
 			// Settings
-			_library.setSettings(settings);
-			_library.widget = $(_library.userSettings.container);
+			_library.widget = widgetDiv;
 
 			// Create base widget
 			_library.extractDataAttrs();
@@ -68,11 +53,10 @@ var hubWidget = (function ($, hubJS) {
 			hubJS.init({ v: 0 });
 			hubJS.baseUrl = "http://local.api.hub.jhu.edu/";
 
-			return _library;
-		},
+			_library.getArticles();
 
-		setSettings: function(settings) {
-			_library.userSettings = $.extend({}, _defaultSettings, settings);
+			// Keeps things chainable
+			return _library.widget;
 		},
 
 		/**
@@ -117,7 +101,6 @@ var hubWidget = (function ($, hubJS) {
 					_library.displayError();
 				}
 			});
-			return _library;
 		},
 
 		/**
@@ -182,6 +165,22 @@ var hubWidget = (function ($, hubJS) {
 	}
 })(jQuery, hubJS);
 
+
+// jQuery plugin
+(function( $ ){
+
+	$.fn.hubWidget = function() {
+
+		return widgetCreator.create(this).css({
+			background: "#f00"
+		});
+
+	};
+
+})( jQuery );
+
+
+// Call the plugin
 jQuery(document).ready(function ($) {
-    hubWidget.init({ container: "#hubWidget"}).getArticles();
+    $("#hubWidget").hubWidget();
 });
