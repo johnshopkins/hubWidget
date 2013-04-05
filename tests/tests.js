@@ -5,8 +5,10 @@
  * displayError
  */
 
+widgetCreator.init();
+
 test("widgetCreator.extractDataAttrs() - no attributes", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\"></div>");
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -20,7 +22,7 @@ test("widgetCreator.extractDataAttrs() - no attributes", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - override count", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-count=\"10\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-count=\"10\"></div>");
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -34,7 +36,7 @@ test("widgetCreator.extractDataAttrs() - override count", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - custom title", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-title=\"News\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-title=\"News\"></div>");
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -48,7 +50,7 @@ test("widgetCreator.extractDataAttrs() - custom title", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - some tags", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-tags=\"one, two, three\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-tags=\"one, two, three\"></div>");
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -62,11 +64,9 @@ test("widgetCreator.extractDataAttrs() - some tags", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - some topics", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-topics=\"four, five, six\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-topics=\"four, five, six\"></div>");
 	widgetCreator.extractDataAttrs();
-
-	console.log(widgetCreator.data);
-
+	
 	var expected = {
 		count: 5,
 		tags: null,
@@ -123,7 +123,7 @@ test("widgetCreator.utility.cleanList()", function () {
 });
 
 test("widgetCreator.utility.compileData() - no attributes", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\"></div>");
 	var output = widgetCreator.utility.compileData();
 
 	var expected = {
@@ -134,7 +134,7 @@ test("widgetCreator.utility.compileData() - no attributes", function () {
 });
 
 test("widgetCreator.utility.compileData() - override count", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-count=\"10\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-count=\"10\"></div>");
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 
@@ -146,7 +146,7 @@ test("widgetCreator.utility.compileData() - override count", function () {
 });
 
 test("widgetCreator.utility.compileData() - custom title", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-title=\"News\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-title=\"News\"></div>");
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 
@@ -158,7 +158,7 @@ test("widgetCreator.utility.compileData() - custom title", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - some tags", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-tags=\"one, two, three\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-tags=\"one, two, three\"></div>");
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 
@@ -171,7 +171,7 @@ test("widgetCreator.extractDataAttrs() - some tags", function () {
 });
 
 test("widgetCreator.utility.compileData() - some topics", function () {
-	widgetCreator.widget = $("<div id=\"widgetCreator\" data-topics=\"four, five, six\"></div>");
+	widgetCreator.widget = $("<div id=\"hubWidget\" data-topics=\"four, five, six\"></div>");
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 

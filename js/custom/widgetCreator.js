@@ -35,6 +35,16 @@ var widgetCreator = (function ($, hubJS) {
 		defaultCount: 5,
 
 		/**
+		 * Saves off the object as _library. This is
+		 * separated out so it can be called by tests.
+		 * @return Object
+		 */
+		init: function() {
+			_library = this;
+			return _library;
+		},
+
+		/**
 		 * Initialize the hub widget
 		 * @return {object} hubWidget
 		 */
@@ -162,23 +172,3 @@ var widgetCreator = (function ($, hubJS) {
 		}
 	}
 })(jQuery, hubJS);
-
-
-// jQuery plugin
-(function( $ ){
-
-	$.fn.hubWidget = function() {
-
-		return widgetCreator.create(this).css({
-			background: "#f00"
-		});
-
-	};
-
-})( jQuery );
-
-
-// Call the plugin
-jQuery(document).ready(function ($) {
-    $("#hubWidget").hubWidget();
-});
