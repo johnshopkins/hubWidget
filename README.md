@@ -90,8 +90,8 @@ Both light and dark CSS themes are available for you to style the Hub Widget. Yo
 
 ```html
 <!-- light theme -->
-<link rel="stylesheet" href="http://hub.jhu.edu/assets/css/light.css" />
+<link rel="stylesheet" href="http://hub.jhu.edu/assets/shared/css/widget-light.css" />
 
 <!-- dark theme -->
-<link rel="stylesheet" href="http://hub.jhu.edu/assets/css/dark.css" />
+<link rel="stylesheet" href="http://hub.jhu.edu/assets/shared/css/widget-dark.css" />
 ```
