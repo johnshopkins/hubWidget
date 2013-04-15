@@ -36,7 +36,7 @@ if (!jqExists("1.8.*")) {
 	};
 	
 	getScript("//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js", function() {
-		loadWidget();
+		loadHubWidget();
 	});
 	
 } else {
@@ -48,7 +48,7 @@ if (!jqExists("1.8.*")) {
 		});
 	});
 
-	loadWidget();
+	loadHubWidget();
 };
 
 function loadHubWidget() {
