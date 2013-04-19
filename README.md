@@ -89,9 +89,9 @@ Retrieves 2 articles from a tag:
 Both light and dark CSS themes are available for you to style the Hub Widget. You may also write your own styles so that the widget matches the rest of your site.
 
 ```html
-<!-- light theme -->
+<!-- for websites with light colored backgrounds -->
 <link rel="stylesheet" href="http://hub.jhu.edu/assets/shared/css/widget-light.css" />
 
-<!-- dark theme -->
+<!-- for websites with dark colored backgrounds -->
 <link rel="stylesheet" href="http://hub.jhu.edu/assets/shared/css/widget-dark.css" />
 ```
