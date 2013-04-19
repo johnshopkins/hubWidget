@@ -1,8 +1,8 @@
 # Hub widget
 
-Embeds articles from the Hub on your website. Currently, the widget is dependent on jQuery, but a future release will be jQuery-independent. The widget is available in two forms:
+Embeds articles from the Hub on your website. Currently, the widget is dependent on __jQuery >= 1.7__, but a future release will be jQuery-independent. The widget is available in two forms:
 
-* __Drop-in widget__: Drop a couple lines of code onto your website and the widget will automatically populate in the area in which it was dropped. If jQuery version 1.8 or greater is not already loaded on your website, the widget will load it automatically.
+* __Drop-in widget__: Drop a couple lines of code onto your website and the widget will automatically populate in the area in which it was dropped. If jQuery version 1.7 or greater is not already loaded on your website, the widget will load it automatically.
 
 * __jQuery plugin__: If you are already using jQuery on your site and have the knowledge to implement a jQuery plugin, we recommend going this route.
 
@@ -22,10 +22,10 @@ Drop the following code in the HTML of your website where you want the widget to
 
 #### Plugin
 
-Include jQuery version 1.8 or greater and the widget plugin:
+Include jQuery version 1.7 or greater and the widget plugin:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 <script src="http://hub.jhu.edu/assets/shared/js/jquery.hubwidget.1.0.min.js?v=1.0.4"></script>
 ```
 

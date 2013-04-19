@@ -1,5 +1,5 @@
 // From http://css-tricks.com/snippets/jquery/load-jquery-only-if-not-present/
-if (!jqExists("1.8.*")) {
+if (!jqExists("1.7.*")) {
 
 	if (typeof $ == "function") {
 		// warning, global var
