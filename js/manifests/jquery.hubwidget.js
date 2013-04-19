@@ -1,5 +1,9 @@
 /**
- * @codekit-prepend "../lib/hubJS.js"
+ * jQuery plugin
+ */
+
+/**
+ * @codekit-prepend "../custom/hubJS.abbrev.js"
  * @codekit-prepend "../custom/widgetCreator.js"
  */
 
