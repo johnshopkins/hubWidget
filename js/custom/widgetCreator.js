@@ -120,11 +120,18 @@ var widgetCreator = (function ($, hubJS) {
 			_library.widget.find(".content").removeClass("loading");
 			_library.widget.find(".content").html($("<ul>"));
 
-			$.each(articles, function(i, article) {
+			for (var i = 0, len = articles.length; i < len; i++) {
+				var article = articles[i];
 				var html = "<li><p class=\"headline\"><a href=\"" + article.url +"\">" + article.headline +"</a></p>";
-                var html = html + "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
+                html += "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
 				_library.widget.find("ul").append(html);
-			});
+			}
+
+			// $.each(articles, function(i, article) {
+			// 	var html = "<li><p class=\"headline\"><a href=\"" + article.url +"\">" + article.headline +"</a></p>";
+   //              var html = html + "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
+			// 	_library.widget.find("ul").append(html);
+			// });
 		},
 
 		/**
