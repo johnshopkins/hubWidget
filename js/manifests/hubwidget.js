@@ -3,6 +3,10 @@
  */
 
 /**
- * @codekit-append "../custom/jqueryExists.js"
- * @codekit-append "../custom/widget.js"
+ * @codekit-append "../custom/hubJS.abbrev.js"
+ * @codekit-append "../custom/widgetCreator.js"
  */
+
+jQuery(document).ready(function ($) {
+	$("#hubWidget").hubWidget();
+});
