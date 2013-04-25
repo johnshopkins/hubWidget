@@ -47,7 +47,7 @@ var hubJS = (function ($, ajax) {
 		 */
 		init: function (settings) {
 			_library = this;
-			_library.userSettings = $.extend({}, _defaultSettings, settings);
+			_library.userSettings = _library.utility.extend({}, _defaultSettings, settings);
 		},
 
 		/**
@@ -60,7 +60,7 @@ var hubJS = (function ($, ajax) {
 		 */
 		get: function(endpoint, data, callback) {
 
-			var data = $.extend({}, data);
+			var data = _library.utility.extend({}, data);
 			data.v = _library.userSettings.version;
 
 			if (data.id) {
@@ -91,8 +91,21 @@ var hubJS = (function ($, ajax) {
 			 * @return {jqXHR}    				See: http://api.jquery.com/jQuery.ajax/#jqXHR
 			 */
 			find: function(data, callback) {
-				var data = $.extend({}, data);
+				var data = _library.utility.extend({}, data);
 				return _library.get("articles", data, callback);
+			}
+		},
+
+		utility: {
+			extend: function() {
+				for (var i = 1, len = arguments.length; i < len; i++) {
+					for (var key in arguments[i]) {
+						if (arguments[i].hasOwnProperty(key)) {
+							arguments[0][key] = arguments[i][key];
+						}
+					}
+				}
+				return arguments[0];
 			}
 		}
 	}
