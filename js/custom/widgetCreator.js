@@ -126,12 +126,6 @@ var widgetCreator = (function ($, hubJS) {
                 html += "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
 				_library.widget.find("ul").append(html);
 			}
-
-			// $.each(articles, function(i, article) {
-			// 	var html = "<li><p class=\"headline\"><a href=\"" + article.url +"\">" + article.headline +"</a></p>";
-   //              var html = html + "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
-			// 	_library.widget.find("ul").append(html);
-			// });
 		},
 
 		/**
