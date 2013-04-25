@@ -8,7 +8,7 @@
  * utility.extractEmbeddedItemIds
  * 
  */
-var hubJS = (function ($) {
+var hubJS = (function ($, ajax) {
 
 	/**
 	 * Hub library object for reference inside
@@ -68,9 +68,9 @@ var hubJS = (function ($) {
 				delete data.id;
 			}
 
-	        return $.ajax({
+	        ajax.get({
 	            url: _library.baseUrl + endpoint,
-	            dataType: "jsonP",
+	            dataType: "jsonp",
 	            data: data,
 	            success: callback,
 	            fail: _library.userSettings.fail
@@ -97,4 +97,4 @@ var hubJS = (function ($) {
 		}
 	}
 
-})(jQuery);
+})(jQuery, simplyAjax);
