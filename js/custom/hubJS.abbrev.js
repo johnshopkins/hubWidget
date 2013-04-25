@@ -56,7 +56,6 @@ var hubJS = (function ($, ajax) {
 		 * @param  {string} 	endpoint  	API endpoint
 		 * @param  {object} 	data     	Data to be sent to the server
 		 * @param  {function} 	callback 	Function to run when request is successful
-		 * @return {jqXHR}    				See: http://api.jquery.com/jQuery.ajax/#jqXHR
 		 */
 		get: function(endpoint, data, callback) {
 
@@ -88,11 +87,10 @@ var hubJS = (function ($, ajax) {
 			 * 
 			 * @param  {object} 	data     	Data to be sent to the server
 			 * @param  {function} 	callback 	Function to run when request is successful
-			 * @return {jqXHR}    				See: http://api.jquery.com/jQuery.ajax/#jqXHR
 			 */
 			find: function(data, callback) {
 				var data = _library.utility.extend({}, data);
-				return _library.get("articles", data, callback);
+				_library.get("articles", data, callback);
 			}
 		},
 
