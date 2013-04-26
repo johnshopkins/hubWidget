@@ -1,4 +1,4 @@
-var widgetCreator = (function ($, hubJS) {
+var widgetCreator = (function (hubJS) {
 
 	/**
 	 * hubWidget object for reference
@@ -15,12 +15,6 @@ var widgetCreator = (function ($, hubJS) {
 		 * @type {Object}
 		 */
 		data: {},
-
-		/**
-		 * Widget container div
-		 * @type {Object}
-		 */
-		widget: {},
 
 		/**
 		 * Default widget title 
@@ -48,14 +42,14 @@ var widgetCreator = (function ($, hubJS) {
 		 * Initialize the hub widget
 		 * @return {object} hubWidget
 		 */
-		create: function(widgetDiv) {
+		create: function() {
 
 			_library = this;
-			_library.widget = widgetDiv;
+			_library.widget = document.getElementById("hubWidget");
 
 			// Create base widget
 			_library.extractDataAttrs();
-			_library.widget.html(_library.createInitialHtml());
+			_library.widget.innerHTML = _library.createInitialHtml();
 
 			// Initialize hubJS
 			hubJS.init({ v: 0 });
@@ -64,7 +58,7 @@ var widgetCreator = (function ($, hubJS) {
 			_library.getArticles();
 
 			// Keeps things chainable
-			return _library.widget;
+			return _library;
 		},
 
 		/**
@@ -75,10 +69,10 @@ var widgetCreator = (function ($, hubJS) {
 		 */
 		extractDataAttrs: function() {
 			_library.data = {
-				count: parseInt(_library.widget.attr("data-count")) || _library.defaultCount,
-				tags: _library.widget.attr("data-tags") || null,
-				title: _library.widget.attr("data-title") || _library.defaultTitle,
-				topics: _library.widget.attr("data-topics") || null
+				count: parseInt(_library.widget.getAttribute("data-count")) || _library.defaultCount,
+				tags: _library.widget.getAttribute("data-tags") || null,
+				title: _library.widget.getAttribute("data-title") || _library.defaultTitle,
+				topics: _library.widget.getAttribute("data-topics") || null
 			};
 		},
 
@@ -88,7 +82,7 @@ var widgetCreator = (function ($, hubJS) {
 		 */
 		createInitialHtml: function() {
 			var html = "<div class=\"header\">" + _library.data.title + "</div>";
-			html += "<div class=\"content loading\"></div>";
+			html += "<div id=\"hubWidgetContent\" class=\"loading\"></div>";
 			html += "<div class=\"hubpower clearfix\"><div class=\"link\"><a href=\"http://hub.jhu.edu\">http://hub.jhu.edu</a></div><div class=\"image\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div></div>";
 			return html;
 		},
@@ -117,14 +111,17 @@ var widgetCreator = (function ($, hubJS) {
 		 * @return {object} hubWidget
 		 */
 		populateWidget: function(articles) {
-			_library.widget.find(".content").removeClass("loading");
-			_library.widget.find(".content").html($("<ul>"));
+			
+			var html = "<ul>";
+			for (var i = 0, len = articles.length; i < len; i++) {
+				var article = articles[i];
+				html += "<li><p class=\"headline\"><a href=\"" + article.url +"\">" + article.headline +"</a></p>";
+                html += "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
+			}
+			html += "</ul";
 
-			$.each(articles, function(i, article) {
-				var html = "<li><p class=\"headline\"><a href=\"" + article.url +"\">" + article.headline +"</a></p>";
-                var html = html + "<p class=\"pubdate\">" + _library.utility.getPublishDate(article.publish_date) + "</a></p></li>";
-				_library.widget.find("ul").append(html);
-			});
+			_library.utility.removeClass(document.getElementById("hubWidgetContent"), "loading");
+			document.getElementById("hubWidgetContent").innerHTML = html;
 		},
 
 		/**
@@ -132,7 +129,7 @@ var widgetCreator = (function ($, hubJS) {
 		 * @return null
 		 */
 		displayError: function() {
-			_library.widget.find(".content").html("<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news.</p>");
+			document.getElementById("hubWidgetContent").innerHTML = "<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news.</p>";
 		},
 
 		/**
@@ -154,7 +151,7 @@ var widgetCreator = (function ($, hubJS) {
 			},
 			compileData: function() {
 				var data = {};
-				data.per_page = $.isNumeric(_library.data.count) ? _library.data.count : _library.defaultCount;
+				data.per_page = _library.utility.isNumeric(_library.data.count) ? _library.data.count : _library.defaultCount;
 
 				if (_library.data.topics) {
 					data.topics = _library.utility.cleanList(_library.data.topics);
@@ -168,7 +165,19 @@ var widgetCreator = (function ($, hubJS) {
 			},
 			cleanList: function (string) {
 				return string.replace(/\s/g, "");
+			},
+			removeClass: function (obj, className) {
+				var classes = obj.className;
+				classes = classes.trim().split(" ");
+
+				var index = classes.indexOf(className);
+				classes.splice(index, 1);
+
+				obj.className = classes.join(" ");
+			},
+			isNumeric: function(obj) {
+				return !isNaN( parseFloat(obj) ) && isFinite( obj );
 			}
 		}
 	}
-})(jQuery, hubJS);
+})(hubJS);

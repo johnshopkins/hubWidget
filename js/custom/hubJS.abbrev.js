@@ -8,7 +8,7 @@
  * utility.extractEmbeddedItemIds
  * 
  */
-var hubJS = (function (global, $) {
+var hubJS = (function (ajax) {
 
 	/**
 	 * Hub library object for reference inside
@@ -47,7 +47,7 @@ var hubJS = (function (global, $) {
 		 */
 		init: function (settings) {
 			_library = this;
-			_library.userSettings = $.extend({}, _defaultSettings, settings);
+			_library.userSettings = _library.utility.extend({}, _defaultSettings, settings);
 		},
 
 		/**
@@ -56,11 +56,10 @@ var hubJS = (function (global, $) {
 		 * @param  {string} 	endpoint  	API endpoint
 		 * @param  {object} 	data     	Data to be sent to the server
 		 * @param  {function} 	callback 	Function to run when request is successful
-		 * @return {jqXHR}    				See: http://api.jquery.com/jQuery.ajax/#jqXHR
 		 */
 		get: function(endpoint, data, callback) {
 
-			var data = $.extend({}, data);
+			var data = _library.utility.extend({}, data);
 			data.v = _library.userSettings.version;
 
 			if (data.id) {
@@ -68,9 +67,9 @@ var hubJS = (function (global, $) {
 				delete data.id;
 			}
 
-	        return $.ajax({
+	        ajax.get({
 	            url: _library.baseUrl + endpoint,
-	            dataType: "jsonP",
+	            dataType: "jsonp",
 	            data: data,
 	            success: callback,
 	            fail: _library.userSettings.fail
@@ -88,13 +87,25 @@ var hubJS = (function (global, $) {
 			 * 
 			 * @param  {object} 	data     	Data to be sent to the server
 			 * @param  {function} 	callback 	Function to run when request is successful
-			 * @return {jqXHR}    				See: http://api.jquery.com/jQuery.ajax/#jqXHR
 			 */
 			find: function(data, callback) {
-				var data = $.extend({}, data);
-				return _library.get("articles", data, callback);
+				var data = _library.utility.extend({}, data);
+				_library.get("articles", data, callback);
+			}
+		},
+
+		utility: {
+			extend: function() {
+				for (var i = 1, len = arguments.length; i < len; i++) {
+					for (var key in arguments[i]) {
+						if (arguments[i].hasOwnProperty(key)) {
+							arguments[0][key] = arguments[i][key];
+						}
+					}
+				}
+				return arguments[0];
 			}
 		}
 	}
 
-})(window, jQuery);
+})(simplyAjax);

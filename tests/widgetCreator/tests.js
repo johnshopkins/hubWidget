@@ -8,7 +8,9 @@
 widgetCreator.init();
 
 test("widgetCreator.extractDataAttrs() - no attributes", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -22,7 +24,10 @@ test("widgetCreator.extractDataAttrs() - no attributes", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - override count", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-count=\"10\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-count", 10);
+
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -36,7 +41,10 @@ test("widgetCreator.extractDataAttrs() - override count", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - custom title", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-title=\"News\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-title", "News");
+
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -50,7 +58,10 @@ test("widgetCreator.extractDataAttrs() - custom title", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - some tags", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-tags=\"one, two, three\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-tags", "one, two, three");
+
 	widgetCreator.extractDataAttrs();
 
 	var expected = {
@@ -61,10 +72,15 @@ test("widgetCreator.extractDataAttrs() - some tags", function () {
 	};
 
 	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
+
+	widgetCreator.widget = null;
 });
 
 test("widgetCreator.extractDataAttrs() - some topics", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-topics=\"four, five, six\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-topics", "four, five, six");
+
 	widgetCreator.extractDataAttrs();
 	
 	var expected = {
@@ -86,7 +102,7 @@ test("widgetCreator.createInitialHtml() - default args", function () {
 	};
 
 	var output = widgetCreator.createInitialHtml();
-	var expected = '<div class="header">News from the Hub</div><div class="content loading"></div><div class="hubpower clearfix"><div class="link"><a href="http://hub.jhu.edu">http://hub.jhu.edu</a></div><div class="image"><a href="http://hub.jhu.edu"><span>Powered by the Hub</span></a></div></div>';
+	var expected = '<div class="header">News from the Hub</div><div id="hubWidgetContent" class="loading"></div><div class="hubpower clearfix"><div class="link"><a href="http://hub.jhu.edu">http://hub.jhu.edu</a></div><div class="image"><a href="http://hub.jhu.edu"><span>Powered by the Hub</span></a></div></div>';
 	
 	equal(output, expected);
 });
@@ -100,7 +116,7 @@ test("widgetCreator.createInitialHtml() - custom title", function () {
 	};
 
 	var output = widgetCreator.createInitialHtml();
-	var expected = '<div class="header">News</div><div class="content loading"></div><div class="hubpower clearfix"><div class="link"><a href="http://hub.jhu.edu">http://hub.jhu.edu</a></div><div class="image"><a href="http://hub.jhu.edu"><span>Powered by the Hub</span></a></div></div>';
+	var expected = '<div class="header">News</div><div id="hubWidgetContent" class="loading"></div><div class="hubpower clearfix"><div class="link"><a href="http://hub.jhu.edu">http://hub.jhu.edu</a></div><div class="image"><a href="http://hub.jhu.edu"><span>Powered by the Hub</span></a></div></div>';
 	
 	equal(output, expected);
 });
@@ -123,7 +139,9 @@ test("widgetCreator.utility.cleanList()", function () {
 });
 
 test("widgetCreator.utility.compileData() - no attributes", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+
 	var output = widgetCreator.utility.compileData();
 
 	var expected = {
@@ -134,7 +152,10 @@ test("widgetCreator.utility.compileData() - no attributes", function () {
 });
 
 test("widgetCreator.utility.compileData() - override count", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-count=\"10\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-count", 10);
+
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 
@@ -146,7 +167,10 @@ test("widgetCreator.utility.compileData() - override count", function () {
 });
 
 test("widgetCreator.utility.compileData() - custom title", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-title=\"News\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-title", "News");
+
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 
@@ -158,7 +182,10 @@ test("widgetCreator.utility.compileData() - custom title", function () {
 });
 
 test("widgetCreator.extractDataAttrs() - some tags", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-tags=\"one, two, three\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-tags", "one, two, three");
+
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 
@@ -171,7 +198,10 @@ test("widgetCreator.extractDataAttrs() - some tags", function () {
 });
 
 test("widgetCreator.utility.compileData() - some topics", function () {
-	widgetCreator.widget = $("<div id=\"hubWidget\" data-topics=\"four, five, six\"></div>");
+	widgetCreator.widget = document.createElement("div");
+	widgetCreator.widget.id = "hubWidget";
+	widgetCreator.widget.setAttribute("data-topics", "four, five, six");
+	
 	widgetCreator.extractDataAttrs();
 	var output = widgetCreator.utility.compileData();
 
