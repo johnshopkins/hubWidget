@@ -1,12 +1,7 @@
 /**
- * Self-contained widget
+ * @codekit-prepend "../lib/simplyAjax.js"
+ * @codekit-prepend "../custom/hubJS.abbrev.js"
+ * @codekit-prepend "../custom/widgetCreator.js"
  */
 
-/**
- * @codekit-append "../custom/hubJS.abbrev.js"
- * @codekit-append "../custom/widgetCreator.js"
- */
-
-jQuery(document).ready(function ($) {
-	$("#hubWidget").hubWidget();
-});
+widgetCreator.create($("#hubWidget"));
