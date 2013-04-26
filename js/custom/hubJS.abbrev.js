@@ -8,7 +8,7 @@
  * utility.extractEmbeddedItemIds
  * 
  */
-var hubJS = (function ($, ajax) {
+var hubJS = (function (ajax) {
 
 	/**
 	 * Hub library object for reference inside
@@ -108,4 +108,4 @@ var hubJS = (function ($, ajax) {
 		}
 	}
 
-})(jQuery, simplyAjax);
+})(simplyAjax);
