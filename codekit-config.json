@@ -2,39 +2,15 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8248",
   "files" : {
-    "\/css\/less\/utility.less" : {
+    "\/css\/less\/variables.less" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/utility.less",
+      "inputAbbreviatedPath" : "\/css\/less\/variables.less",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/utility.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/js\/custom\/prototypes.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/custom\/prototypes.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/prototypes.min.js",
-      "fileType" : 64
-    },
-    "\/css\/less\/color-light.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/color-light.less",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/color-light.css",
+      "outputAbbreviatedPath" : "\/css\/variables.css",
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
@@ -50,6 +26,19 @@
       "initialSize" : 855,
       "fileType" : 8192
     },
+    "\/css\/less\/color-light.less" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/less\/color-light.less",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/color-light.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
     "\/css\/less\/structure.less" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -59,6 +48,19 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/structure.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
+    "\/css\/less\/widget-dark.less" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/less\/widget-dark.less",
+      "outputStyle" : 2,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/widget-dark.css",
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
@@ -85,17 +87,6 @@
       "outputAbbreviatedPath" : "\/js\/widgetCreator.min.js",
       "fileType" : 64
     },
-    "\/js\/manifest\/hubwidget.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/manifest\/hubwidget.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/hubwidget.min.js",
-      "fileType" : 64
-    },
     "\/images\/widget-hubpower-dark.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -107,28 +98,26 @@
       "initialSize" : 857,
       "fileType" : 8192
     },
-    "\/css\/less\/variables.less" : {
+    "\/js\/manifest\/hubwidget.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/variables.less",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/variables.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/js\/hubwidget.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/hubwidget.min.js",
+      "inputAbbreviatedPath" : "\/js\/manifest\/hubwidget.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/hubwidget.min.min.js",
+      "outputAbbreviatedPath" : "\/js\/hubwidget.min.js",
+      "fileType" : 64
+    },
+    "\/js\/lib\/simplyAjax.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/lib\/simplyAjax.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/simplyAjax.min.js",
       "fileType" : 64
     },
     "\/css\/less\/type.less" : {
@@ -144,6 +133,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/js\/hubwidget.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/hubwidget.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/hubwidget.min.min.js",
+      "fileType" : 64
+    },
     "\/tests\/widgetCreator\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -153,26 +153,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/js\/lib\/simplyAjax.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/lib\/simplyAjax.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/simplyAjax.min.js",
-      "fileType" : 64
-    },
-    "\/css\/less\/hubwidget-dark.less" : {
+    "\/css\/less\/widget-light.less" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/hubwidget-dark.less",
+      "inputAbbreviatedPath" : "\/css\/less\/widget-light.less",
       "outputStyle" : 2,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/hubwidget-dark.css",
+      "outputAbbreviatedPath" : "\/css\/widget-light.css",
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
@@ -186,15 +175,37 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/css\/less\/hubwidget-light.less" : {
+    "\/js\/custom\/prototypes.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/less\/hubwidget-light.less",
-      "outputStyle" : 2,
+      "inputAbbreviatedPath" : "\/js\/custom\/prototypes.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/prototypes.min.js",
+      "fileType" : 64
+    },
+    "\/js\/custom\/hubJS.abbrev.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/custom\/hubJS.abbrev.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/hubJS.abbrev.min.js",
+      "fileType" : 64
+    },
+    "\/css\/less\/utility.less" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/less\/utility.less",
+      "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/hubwidget-light.css",
+      "outputAbbreviatedPath" : "\/css\/utility.css",
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
@@ -211,17 +222,6 @@
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/js\/custom\/hubJS.abbrev.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/custom\/hubJS.abbrev.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/hubJS.abbrev.min.js",
-      "fileType" : 64
     }
   },
   "manualImportLinks" : [
