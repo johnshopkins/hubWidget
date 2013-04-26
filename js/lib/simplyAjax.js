@@ -1,4 +1,4 @@
-var ajax = (function () {
+var simplyAjax = (function () {
 
 	/**
 	 * Holds XMLHttpRequest object
@@ -83,21 +83,21 @@ var ajax = (function () {
 		 * @param  {Object} obj
 		 *         url: URL to make the request to
 		 *         data: Plain object of key: value pairs to send with the request
-		 *         datatype: right now, specifiying jsonp is the only thing that does anything
+		 *         dataType: right now, specifiying jsonp is the only thing that does anything
 		 *         success: callback function to fire upon a successful GET request (data, statusCode, statusText)
 		 *         fail: callback function to fire upon a failed GET request (statusCode, statusText)
 		 * @return null
 		 */
 		get: function(obj) {
 
-			if (obj.datatype.toLowerCase() == "jsonp") {
+			if (obj.dataType && obj.dataType.toLowerCase() == "jsonp") {
 
 				// assign success callback to a function on ajax object
 				var cb = randomCallbackName();
-				ajax[cb] = obj.success;
+				simplyAjax[cb] = obj.success;
 
 				// assign callback in URL
-				obj.data.callback = "ajax." + cb;
+				obj.data.callback = "simplyAjax." + cb;
 				var url = obj.url + createQueryString(obj.data);
 				
 				crossDomainRequest(url);
