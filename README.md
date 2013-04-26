@@ -8,8 +8,8 @@ Embeds articles from the Hub on your website. Drop a couple lines of code onto y
 Drop the following code in the HTML of your website where you want the widget to display:
 
 ```html
-<script src="http://hub.jhu.edu/assets/shared/js/hubwidget.2.0.min.js"></script>
 <div id="hubWidget"></div>
+<script src="http://hub.jhu.edu/assets/shared/js/hubwidget.2.0.min.js"></script>
 ```
 
 
