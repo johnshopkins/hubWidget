@@ -21,7 +21,8 @@ var hubJS = (function (ajax) {
 	 * @type {Object}
 	 */
 	var _defaultSettings = {
-		version: 0
+		version: 0,
+		key: null
 	};
 
 
@@ -61,6 +62,7 @@ var hubJS = (function (ajax) {
 
 			var data = _library.utility.extend({}, data);
 			data.v = _library.userSettings.version;
+			data.key = _library.userSettings.key;
 
 			if (data.id) {
 				endpoint = endpoint + "/" + data.id;
