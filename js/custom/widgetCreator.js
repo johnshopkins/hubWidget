@@ -129,6 +129,7 @@ var widgetCreator = (function (hubJS) {
 		 * @return null
 		 */
 		displayError: function() {
+			_library.utility.removeClass(document.getElementById("hubWidgetContent"), "loading");
 			document.getElementById("hubWidgetContent").innerHTML = "<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news.</p>";
 		},
 
