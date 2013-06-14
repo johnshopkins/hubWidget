@@ -20,7 +20,7 @@ test("widgetCreator.extractDataAttrs() - no attributes", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
+	deepEqual(widgetCreator.data, expected);
 });
 
 test("widgetCreator.extractDataAttrs() - override count", function () {
@@ -37,7 +37,7 @@ test("widgetCreator.extractDataAttrs() - override count", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
+	deepEqual(widgetCreator.data, expected);
 });
 
 test("widgetCreator.extractDataAttrs() - custom title", function () {
@@ -54,7 +54,7 @@ test("widgetCreator.extractDataAttrs() - custom title", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
+	deepEqual(widgetCreator.data, expected);
 });
 
 test("widgetCreator.extractDataAttrs() - some tags", function () {
@@ -71,7 +71,7 @@ test("widgetCreator.extractDataAttrs() - some tags", function () {
 		topics: null
 	};
 
-	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
+	deepEqual(widgetCreator.data, expected);
 
 	widgetCreator.widget = null;
 });
@@ -90,7 +90,7 @@ test("widgetCreator.extractDataAttrs() - some topics", function () {
 		topics: "four, five, six"
 	};
 
-	equal(JSON.stringify(widgetCreator.data), JSON.stringify(expected));
+	deepEqual(widgetCreator.data, expected);
 });
 
 test("widgetCreator.createInitialHtml() - default args", function () {
@@ -148,7 +148,7 @@ test("widgetCreator.utility.compileData() - no attributes", function () {
 		per_page: 5,
 	};
 
-	equal(JSON.stringify(output), JSON.stringify(expected));
+	deepEqual(output, expected);
 });
 
 test("widgetCreator.utility.compileData() - override count", function () {
@@ -163,7 +163,7 @@ test("widgetCreator.utility.compileData() - override count", function () {
 		per_page: 10,
 	};
 
-	equal(JSON.stringify(output), JSON.stringify(expected));
+	deepEqual(output, expected);
 });
 
 test("widgetCreator.utility.compileData() - custom title", function () {
@@ -178,7 +178,7 @@ test("widgetCreator.utility.compileData() - custom title", function () {
 		per_page: 5
 	};
 
-	equal(JSON.stringify(output), JSON.stringify(expected));
+	deepEqual(output, expected);
 });
 
 test("widgetCreator.extractDataAttrs() - some tags", function () {
@@ -194,7 +194,7 @@ test("widgetCreator.extractDataAttrs() - some tags", function () {
 		tags: "one,two,three",
 	};
 
-	equal(JSON.stringify(output), JSON.stringify(expected));
+	deepEqual(output, expected);
 });
 
 test("widgetCreator.utility.compileData() - some topics", function () {
@@ -210,5 +210,5 @@ test("widgetCreator.utility.compileData() - some topics", function () {
 		topics: "four,five,six"
 	};
 
-	equal(JSON.stringify(output), JSON.stringify(expected));
+	deepEqual(output, expected);
 });
