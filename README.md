@@ -8,7 +8,7 @@ Embeds articles from the Hub on your website. Drop a couple lines of code onto y
 Drop the following code in the HTML of your website where you want the widget to display:
 
 ```html
-<div id="hubWidget"></div>
+<div id="hubWidget" key="your_api_key"></div>
 <script src="http://hub.jhu.edu/assets/shared/js/hubwidget.2.0.min.js"></script>
 ```
 
@@ -43,13 +43,13 @@ _Note_: The easiest way to find a tag or topic slug is to visit that term's page
 Retrieves 7 articles from two topics:
 
 ```html
-<div id="hubWidget" data-count="7" data-topics="health, arts-sciences"></div>
+<div id="hubWidget" key="your_api_key" data-count="7" data-topics="health, arts-sciences"></div>
 ```
 
 Retrieves 2 articles from a tag:
 
 ```html
-<div id="hubWidget" data-count="7" data-tags="film-and-media-studies"></div>
+<div id="hubWidget" key="your_api_key" data-count="7" data-tags="film-and-media-studies"></div>
 ```
 
 

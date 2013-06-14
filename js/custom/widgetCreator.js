@@ -52,8 +52,8 @@ var widgetCreator = (function (hubJS) {
 			_library.widget.innerHTML = _library.createInitialHtml();
 
 			// Initialize hubJS
-			hubJS.init({ v: 0 });
-			hubJS.baseUrl = "http://api.hub.jhu.edu/";
+			var key = _library.widget.getAttribute("key") || null
+			hubJS.init({ v: 0, key: key });
 
 			_library.getArticles();
 
