@@ -2,6 +2,7 @@
 
 Embeds articles from the Hub on your website. Drop a couple lines of code onto your website and the widget will automatically populate in the area in which it was dropped.
 
+__NOTE__: The API (the system the widget runs off) requires authentication. If you are already using the API and have an API key, you can follow the instructions below and plug your API key into the `"key"` attribute on the `"hubWidget"` div below. If you do not have an API key, please use the [Hub widget customization form](http://hub.jhu.edu/developers/widget) to get a widget pre-loaded with an API key.
 
 ## Basic usage
 
