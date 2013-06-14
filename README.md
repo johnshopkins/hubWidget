@@ -19,7 +19,7 @@ Drop the following code in the HTML of your website where you want the widget to
 You can customize the widget by adding data attributes to the `#hubWidget` div. The folllowing example would change the header of the widget to read "Hub News."
 
 ```html
-<div id="hubWidget" data-title="Hub News"></div>
+<div id="hubWidget" key="your_api_key" data-title="Hub News"></div>
 ```
 
 ### Data attributes
