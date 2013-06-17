@@ -1,25 +1,30 @@
 # Hub widget
 
 Embeds articles from the Hub on your website. Drop a couple lines of code onto your website and the widget will automatically populate in the area in which it was dropped.
-
-__NOTE__: The API (the system the widget runs off) requires authentication. If you are already using the API and have an API key, you can follow the instructions below and plug your API key into the `"key"` attribute on the `"hubWidget"` div below. If you do not have an API key, please use the [Hub widget customization form](http://hub.jhu.edu/developers/widget) to get a widget pre-loaded with an API key.
+π
 
 ## Basic usage
 
 Drop the following code in the HTML of your website where you want the widget to display:
 
 ```html
-<div id="hubWidget" key="your_api_key"></div>
+<div id="hubWidget" version="api_version" key="api_key"></div>
 <script src="http://hub.jhu.edu/assets/shared/js/hubwidget.2.1.min.js"></script>
 ```
+
+### API version and key
+
+The API (the system the widget runs on) requires all requests to specify an API version number and an authorization key. If you do not have an authorization key, please use the [widget customization form](http://hub.jhu.edu/developers/widget) to get a widget pre-loaded with a key.
+
+If you are already using the API, plug your API key into the `key` attribute and latest version of the API into the `version` attribute. See the [API Documentation](http://api.hub.jhu.edu) for more infomration about versions."
 
 
 ## Advanced usage
 
-You can customize the widget by adding data attributes to the `#hubWidget` div. The folllowing example would change the header of the widget to read "Hub News."
+You can customize the widget by adding data attributes (see below) to the `#hubWidget` div. The folllowing example would change the header of the widget to read "Hub News."
 
 ```html
-<div id="hubWidget" key="your_api_key" data-title="Hub News"></div>
+<div id="hubWidget" version="api_version" key="api_key" data-title="Hub News"></div>
 ```
 
 ### Data attributes
@@ -44,13 +49,13 @@ _Note_: The easiest way to find a tag or topic slug is to visit that term's page
 Retrieves 7 articles from two topics:
 
 ```html
-<div id="hubWidget" key="your_api_key" data-count="7" data-topics="health, arts-sciences"></div>
+<div id="hubWidget" version="api_version" key="api_key" data-count="7" data-topics="health, arts-sciences"></div>
 ```
 
 Retrieves 2 articles from a tag:
 
 ```html
-<div id="hubWidget" key="your_api_key" data-count="7" data-tags="film-and-media-studies"></div>
+<div id="hubWidget" version="api_version" key="api_key" data-count="7" data-tags="film-and-media-studies"></div>
 ```
 
 
