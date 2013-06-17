@@ -42,10 +42,10 @@ var widgetCreator = (function (hubJS) {
 		 * Initialize the hub widget
 		 * @return {object} hubWidget
 		 */
-		create: function() {
+		create: function(object, settings) {
 
 			_library = this;
-			_library.widget = document.getElementById("hubWidget");
+			_library.widget = object;
 
 			// Create base widget
 			_library.extractDataAttrs();
@@ -53,7 +53,7 @@ var widgetCreator = (function (hubJS) {
 
 			// Initialize hubJS
 			var key = _library.widget.getAttribute("key") || null
-			hubJS.init({ v: 0, key: key });
+			hubJS.init(settings);
 
 			_library.getArticles();
 

@@ -5,4 +5,9 @@
  * @codekit-prepend "../custom/widgetCreator.js"
  */
 
-widgetCreator.create();
+var widget = document.getElementById("hubWidget");
+
+widgetCreator.create( widget,{
+	version: widget.getAttribute("version"),
+	key: widget.getAttribute("key")
+});
