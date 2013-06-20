@@ -1,7 +1,12 @@
 # Hub widget
 
 Embeds articles from the Hub on your website. Drop a couple lines of code onto your website and the widget will automatically populate in the area in which it was dropped.
-π
+
+## API version and key
+
+The API (the system the widget runs on) requires all requests to specify an API version number and an authorization key. If you do not have an authorization key, please use the [widget customization form](http://hub.jhu.edu/developers/widget) to get a widget pre-loaded with a key.
+
+If you are already using the API, plug your API key into the `key` attribute and latest version of the API into the `version` attribute. See the [API Documentation](http://api.hub.jhu.edu) for more infomration about versions."
 
 ## Basic usage
 
@@ -11,12 +16,6 @@ Drop the following code in the HTML of your website where you want the widget to
 <div id="hubWidget" version="api_version" key="api_key"></div>
 <script src="http://hub.jhu.edu/assets/shared/js/hubwidget.2.1.min.js"></script>
 ```
-
-### API version and key
-
-The API (the system the widget runs on) requires all requests to specify an API version number and an authorization key. If you do not have an authorization key, please use the [widget customization form](http://hub.jhu.edu/developers/widget) to get a widget pre-loaded with a key.
-
-If you are already using the API, plug your API key into the `key` attribute and latest version of the API into the `version` attribute. See the [API Documentation](http://api.hub.jhu.edu) for more infomration about versions."
 
 
 ## Advanced usage
