@@ -23,5 +23,8 @@
     "gulp": "~3.8.6",
     "gulp-tasks": "git+ssh://git@github.com:johnshopkins/gulp-tasks.git",
     "hubJS": "git+ssh://git@github.com:johnshopkins/hubJS.git"
+  },
+  "dependencies": {
+    "moment": "~2.8.0"
   }
 }
