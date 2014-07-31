@@ -1,6 +1,6 @@
 {
   "name": "hubWidget",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Embeds content from the Hub on your website.",
   "main": "index.js",
   "directories": {
