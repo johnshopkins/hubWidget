@@ -21,13 +21,18 @@ utils.prototype.cleanList = function (string) {
 };
 
 utils.prototype.removeClass = function (obj, className) {
+
   var classes = obj.className;
-  classes = classes.trim().split(" ");
 
-  var index = classes.indexOf(className);
-  classes.splice(index, 1);
+  var re = new RegExp(className);
+  var newClasses = classes.replace(re, "");
 
-  obj.className = classes.join(" ");
+  obj.className = newClasses;
+  
+};
+
+utils.prototype.trim = function (string) {
+  return string.replace(/^\s+|\s+$/g, "");
 };
 
 utils.prototype.isNumeric = function(obj) {
