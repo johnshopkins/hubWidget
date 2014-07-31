@@ -11,7 +11,7 @@
 	a {
 		color: #000;
 		&:hover {
-			color: @hopkins_blue;
+			color: $hopkins_blue;
 		}
 	}
 	.pubdate {
@@ -20,7 +20,7 @@
 	.hubpower {
 		.link {
 			a {
-				color: @hopkins_blue;
+				color: $hopkins_blue;
 				&:hover {
 					color: #aaa;
 				}

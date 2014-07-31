@@ -11,7 +11,7 @@
 	a {
 		color: #eee;
 		&:hover {
-			color: lighten(@hopkins_blue, 20%);
+			color: lighten($hopkins_blue, 20%);
 		}
 	}
 	.pubdate {
@@ -20,7 +20,7 @@
 	.hubpower {
 		.link {
 			a {
-				color: lighten(@hopkins_blue, 20%);
+				color: lighten($hopkins_blue, 20%);
 				&:hover {
 					color: #aaa;
 				}
