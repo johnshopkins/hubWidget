@@ -14,7 +14,7 @@ Drop the following code in the HTML of your website where you want the widget to
 
 ```html
 <div id="hubWidget" version="api_version" key="api_key"></div>
-<script src="http://hub.jhu.edu/assets/shared/js/hubwidget.2.1.min.js"></script>
+<script src="http://hub.jhu.edu/assets/shared/js/hubwidget.3.0.min.js"></script>
 ```
 
 
