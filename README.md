@@ -31,9 +31,10 @@ You can customize the widget by adding data attributes (see below) to the `#hubW
 | Attributes 			| Value																	| Description 														|
 |-----------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------|
 | data-count			| Integer, default: 5 													| Alters the number of articles to display 							|
-| data-tags				| String: Comma-separated list of tag slugs or IDs, default: null		| Alters the article request to only get articles in these tags 	|
+| data-tags       | String: Comma-separated list of tag slugs or IDs, default: null   | Alters the article request to only get articles in these tags   |
+| data-type       | String: articles or events   | Type of content to retrieve   |
 | data-title			| String, default: News from the Hub									| Alters the title of the widget 									|
-| data-topics			| String: Comma-separated list of topic slugs or IDs, default: null		| Alters the article request to only get articles in these topics 	|
+| data-topics     | String: Comma-separated list of topic slugs or IDs, default: null   | Alters the article request to only get articles in these topics   |
 
 _Note_: The easiest way to find a tag or topic slug is to visit that term's page on the Hub. Topic pages can be found by clicking "See all &raquo;" on the topic's homepage section. To find a tag page, find an article that is tagged with the tag you are looking for. Then click on the tag's name under the byline, which will take you to the tag page. Once you have found the tag or topic page you are looking for, the slug is located in the URL. Examples:
 

@@ -1,0 +1,27 @@
+{
+  "name": "hubWidget",
+  "version": "3.0.0",
+  "description": "Embeds content from the Hub on your website.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnshopkins/hubWidget.git"
+  },
+  "author": "Jen Wachter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnshopkins/hubWidget/issues"
+  },
+  "homepage": "https://github.com/johnshopkins/hubWidget",
+  "devDependencies": {
+    "gulp": "~3.8.6",
+    "gulp-tasks": "git+ssh://git@github.com:johnshopkins/gulp-tasks.git",
+    "hubJS": "git+ssh://git@github.com:johnshopkins/hubJS.git"
+  }
+}
