@@ -11,8 +11,15 @@
      </head>
 
 <body>
-     <div id="hubWidget" data-version="0" data-key="" data-type="events" data-channels="" data-title="Cool stuff"></div>
-     <script src="../../dist/js/widget.js"></script>
+     <!--<div id="hubWidget" data-version="0" data-key="billcosby" data-type="events" data-channels="" data-title="Cool stuff"></div>
+     <script src="../../build/js/widget.js"></script>-->
+
+     <div id="hubWidget" data-version="0" data-key="billcosby" data-type="events" data-channels="" data-title="Cool stuff"></div>
+     <script src="../../build/js/creatorExposed.js"></script>
+     <script>
+          var div = document.getElementById("hubWidget");
+          new Widget(div);
+     </script>
 </body>
 
 </html>
