@@ -16,10 +16,6 @@ utils.prototype.getMonth = function(dateObject) {
   return monthNames[dateObject.getMonth()];
 };
 
-utils.prototype.cleanList = function (string) {
-  return string.replace(/\s/g, "");
-};
-
 utils.prototype.removeClass = function (obj, className) {
 
   var classes = obj.className;
@@ -28,11 +24,7 @@ utils.prototype.removeClass = function (obj, className) {
   var newClasses = classes.replace(re, "");
 
   obj.className = newClasses;
-  
-};
 
-utils.prototype.trim = function (string) {
-  return string.replace(/^\s+|\s+$/g, "");
 };
 
 utils.prototype.isNumeric = function(obj) {

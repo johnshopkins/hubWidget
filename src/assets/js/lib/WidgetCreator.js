@@ -1,14 +1,14 @@
-var hubjslib = require("hubJS");
+var api = require("./api");
 var utils = require("./utils");
-var moment = require("moment");
+var DateFormatter = require("./date-formatter");
 
 var WidgetCreator = function (div) {
 
   this.widget = div;
 
-  this.hubjs = new hubjslib({
+  this.api = new api({
     key: this.widget.getAttribute("data-key"),
-    version: this.widget.getAttribute("data-version")
+    v: this.widget.getAttribute("data-version")
   });
 
   var type = this.widget.getAttribute("data-type");
@@ -68,9 +68,9 @@ WidgetCreator.prototype.create = function () {
 WidgetCreator.prototype.getData = function (callback) {
 
   // something other than articles or events was requested
-  if (!this.hubjs[this.type]) return this.displayError();
+  if (!this.api[this.type]) return this.displayError();
 
-  this.hubjs[this.type].find(this.parameters).then(function (payload) {
+  this.api[this.type](this.parameters).then(function (payload) {
 
     if (payload.error) {
       return callback(payload.error);
@@ -83,7 +83,7 @@ WidgetCreator.prototype.getData = function (callback) {
 };
 
 WidgetCreator.prototype.populateWidget = function (data) {
-  
+
   var content = "";
 
   if (this.type == "articles") {
@@ -100,18 +100,18 @@ WidgetCreator.prototype.populateWidget = function (data) {
 };
 
 WidgetCreator.prototype.getFormattedArticles = function (data) {
-  
+
   var articles = data._embedded.articles;
   if (!articles) return;
 
   var html = "";
 
   for (var i = 0, len = articles.length; i < len; i++) {
-    
+
     var article = articles[i];
     html += "<li><p class=\"headline\"><a href=\"" + article.url +"\">" + article.headline +"</a></p>";
     html += "<p class=\"pubdate\">" + utils.getPublishDate(article.publish_date) + "</a></p></li>";
-  
+
   }
 
   return html;
@@ -119,7 +119,7 @@ WidgetCreator.prototype.getFormattedArticles = function (data) {
 };
 
 WidgetCreator.prototype.getFormattedEvents = function (data) {
-  
+
   var events = data._embedded.events;
   if (!events) return;
 
@@ -129,12 +129,11 @@ WidgetCreator.prototype.getFormattedEvents = function (data) {
 
     var event = events[i];
 
-    var start_date = moment(event.start_date, "YYYY-MM-DD");
-    var start_time = moment(event.start_time, "H:mm");
+    var formatter = new DateFormatter(event.start_date, event.start_time);
 
     html += "<li><p class=\"headline\"><a href=\"" + event.url +"\">" + event.name +"</a></p>";
-    html += "<p class=\"pubdate\">" + start_date.format("MMM D") + " at " + start_time.format("h:mma") + "</a></p></li>";
-  
+    html += "<p class=\"pubdate\">" + formatter.event() + "</a></p></li>";
+
   }
 
   return html;
