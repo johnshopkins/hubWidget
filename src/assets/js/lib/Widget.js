@@ -103,13 +103,13 @@ Widget.prototype.populateWidget = function (data) {
     content = this.getFormattedEvents(data);
   }
 
-  this.contentDiv = this.widget.find(".content");
-  this.contentDiv.removeClass("loading")
+  this.contentDiv = this.widget.querySelector(".content");
+  utils.removeClass(this.contentDiv, "loading");
 
   if (content) {
-    this.contentDiv.html("<ul>" + content + "</ul>");
+    this.contentDiv.innerHTML = "<ul>" + content + "</ul>";
   } else {
-    this.displayError();
+    return this.displayError();
   }
 
 };
