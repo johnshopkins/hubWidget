@@ -8,8 +8,8 @@
 /* global document: false */
 
 var $ = require("./shims/jquery");
+var WidgetCreator = require("./lib/WidgetCreator");
 
 $(function() {
-  var WidgetCreator = require("./lib/WidgetCreator");
-  new WidgetCreator(document.querySelectorAll(".hub-widget"));
+  new WidgetCreator($(".hub-widget"));
 });
