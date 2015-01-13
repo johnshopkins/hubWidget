@@ -103,7 +103,7 @@ Widget.prototype.populateWidget = function (data) {
     content = this.getFormattedEvents(data);
   }
 
-  this.contentDiv = $(".content");
+  this.contentDiv = this.widget.find(".content");
   this.contentDiv.removeClass("loading");
 
   if (content) {
