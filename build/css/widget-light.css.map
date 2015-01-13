@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,UAAW;EACV,KAAK,EAAE,IAAI;EACX,kBAAQ;IACP,aAAa,EAAE,cAAc;EAG7B,oCAAU;IACT,UAAU,EAAE,kFAAkF;EAGhG,YAAE;IACD,KAAK,EAAE,IAAI;IACX,kBAAQ;MACP,KAAK,ECbO,OAAO;EDgBrB,mBAAS;IACR,KAAK,EAAE,IAAI;EAIV,4BAAE;IACD,KAAK,ECtBM,OAAO;IDuBlB,kCAAQ;MACP,KAAK,EAAE,IAAI;EAId,2BAAO;IACN,UAAU,EAAE,yFAAyF;;AE5BvG,kBAAQ;EACP,cAAc,EAAE,IAAI;EACpB,aAAa,EAAE,IAAI;AAGnB,oCAAU;EACT,UAAU,EAAE,IAAI;AAGlB,aAAG;EACF,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,gBAAG;IACF,aAAa,EAAE,IAAI;EAEpB,eAAE;IACD,OAAO,EAAE,CAAC;IACV,MAAM,EAAE,CAAC;AAIV,0BAAM;EACL,KAAK,EAAE,IAAI;AAEZ,2BAAO;EACN,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,KAAK;EACZ,gCAAK;IACJ,OAAO,EAAE,IAAI;;AC9BjB,UAAW;EACV,WAAW,EAAE,gGAAgG;EAC7G,WAAW,EAAE,IAAI;EACjB,kBAAQ;IACP,SAAS,EAAE,IAAI;IACf,WAAW,EAAE,IAAI;EAElB,aAAG;IACF,UAAU,EAAE,IAAI;EAEjB,oBAAU;IACT,SAAS,EAAE,IAAI;EAEhB,YAAE;IACD,eAAe,EAAE,IAAI;EAEtB,mBAAS;IACR,SAAS,EAAE,IAAI;IACf,UAAU,EAAE,MAAM;EAGlB,0BAAM;IACL,SAAS,EAAE,IAAI;;ACrBjB,uDAAkC;EAC9B,OAAO,EAAE,GAAG;EACZ,OAAO,EAAE,KAAK;AAElB,0BAAgB;EACZ,KAAK,EAAE,IAAI;AAEf,oBAAU;EACN,KAAK,EAAE,CAAC",
-"sources": ["../../../../../../Users/jwachter/www/libs/hubWidget/src/assets/css/sass/color_light.scss","../../../../../../Users/jwachter/www/libs/hubWidget/src/assets/css/sass/variables.scss","../../../../../../Users/jwachter/www/libs/hubWidget/src/assets/css/sass/structure.scss","../../../../../../Users/jwachter/www/libs/hubWidget/src/assets/css/sass/type.scss","../../../../../../Users/jwachter/www/libs/hubWidget/src/assets/css/sass/utility.scss"],
-"names": [],
-"file": "widget-light.css"
-}
