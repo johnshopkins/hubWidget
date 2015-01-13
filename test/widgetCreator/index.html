@@ -1,40 +1,17 @@
 <!doctype html>
 <html lang="en">
-     <head>
-          <metacharset="utf-8">
-          <metahttp-equiv="X-UA-Compatible"content"IE=edge,chrome=1">
-          <title>hubWidget</title>
-          <metaname="viewport"content="width=device-width">
-          <!-- for websites with light colored backgrounds -->
-          <link rel="stylesheet" href="../../build/css/widget-light.css" />
+   <head>
+      <metacharset="utf-8">
+      <metahttp-equiv="X-UA-Compatible"content"IE=edge,chrome=1">
+      <title>hubWidget</title>
+      <metaname="viewport"content="width=device-width">
+      <link rel="stylesheet" href="../../build/css/widget-light.css" />
+   </head>
 
-     </head>
-
-<body>
-    <div class="testing one two three"></div>
-    <script>
-    if (!document.querySelectorAll) {
-      document.querySelectorAll = function(selectors) {
-        var style = document.createElement('style'), elements = [], element;
-        document.documentElement.firstChild.appendChild(style);
-        document._qsa = [];
-
-        style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
-        window.scrollBy(0, 0);
-        style.parentNode.removeChild(style);
-
-        while (document._qsa.length) {
-          element = document._qsa.shift();
-          element.style.removeAttribute('x-qsa');
-          elements.push(element);
-        }
-        document._qsa = null;
-        return elements;
-      };
-    }</script>
-     <div class="hub-widget events" data-version="0" data-key="billcosby" data-type="events" data-featured="true" data-channels="" data-title="Events"></div>
-     <div class="hub-widget articles" data-version="0" data-key="billcosby" data-type="articles" data-channels="" data-title="Articles"></div>
-     <script src="../../build/js/widget.js"></script>
-</body>
+  <body>
+    <div class="hub-widget events" data-version="0" data-key="billcosby" data-type="events" data-featured="true" data-channels="" data-title="Events"></div>
+    <div class="hub-widget articles" data-version="0" data-key="billcosby" data-type="articles" data-channels="" data-title="Articles"></div>
+    <script src="../../build/js/widget.js"></script>
+  </body>
 
 </html>
