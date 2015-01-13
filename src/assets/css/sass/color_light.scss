@@ -3,10 +3,8 @@
 	.header {
 		border-bottom: 5px solid #000;
 	}
-	.hub-widgetContent {
-		&.loading {
-			background: url("http://hub.jhu.edu/assets/shared/img/loading-light.gif") top center no-repeat;
-		}
+	.loading {
+		background: url("http://hub.jhu.edu/assets/shared/img/loading-light.gif") top center no-repeat;
 	}
 	a {
 		color: #000;
