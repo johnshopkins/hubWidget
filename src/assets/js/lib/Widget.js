@@ -103,10 +103,12 @@ Widget.prototype.populateWidget = function (data) {
     content = this.getFormattedEvents(data);
   }
 
+  this.contentDiv = this.widget.querySelector(".content");
+  utils.removeClass(this.contentDiv, "loading");
+
   if (!content) return this.displayError();
 
-  utils.removeClass(this.widget.querySelector(".content"), "loading");
-  this.widget.querySelector(".content").innerHTML = "<ul>" + content + "</ul>";
+  this.contentDiv.innerHTML = "<ul>" + content + "</ul>";
 
 };
 
@@ -161,8 +163,7 @@ Widget.prototype.getFormattedEvents = function (data) {
  */
 Widget.prototype.displayError = function () {
 
-  utils.removeClass(this.widget.querySelector(".content"), "loading");
-  this.widget.querySelector(".content").innerHTML = "<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news and events.</p>";
+  this.contentDiv.innerHTML = "<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news and events.</p>";
 
 };
 
