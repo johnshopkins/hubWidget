@@ -33,7 +33,7 @@ Widget.prototype.createBaseHtml = function () {
   this.title = title ? title : "News from the Hub";
 
   var html = "<div class=\"header\">" + this.title + "</div>";
-  html += "<div class=\"content\" class=\"loading\"></div>";
+  html += "<div class=\"content loading\" ></div>";
   html += "<div class=\"hubpower clearfix\"><div class=\"link\"><a href=\"http://hub.jhu.edu\">http://hub.jhu.edu</a></div><div class=\"image\"><a href=\"http://hub.jhu.edu\"><span>Powered by the Hub</span></a></div></div>";
 
   this.widget.innerHTML = html;
