@@ -7,5 +7,9 @@
 /* global require: false */
 /* global document: false */
 
-var WidgetCreator = require("./lib/WidgetCreator");
-new WidgetCreator(document.querySelectorAll(".hub-widget"));
+var $ = require("./shims/jquery");
+
+$(function() {
+  var WidgetCreator = require("./lib/WidgetCreator");
+  new WidgetCreator(document.querySelectorAll(".hub-widget"));
+});

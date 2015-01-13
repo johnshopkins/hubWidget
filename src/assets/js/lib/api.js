@@ -3,7 +3,7 @@
  * https://github.com/johnshopkins/hubJS
  */
 
-var ajax = require("./ajax");
+var $ = require("../shims/jquery");
 
 var api = function (settings) {
 
@@ -24,7 +24,7 @@ api.prototype.get = function (endpoint, data) {
   data.v = this.v;
   data.key = this.key;
 
-  return ajax.get({
+  return $.ajax({
     url: "http://api.hub.jhu.edu/" + endpoint,
     dataType: "jsonp",
     data: data

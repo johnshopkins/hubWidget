@@ -85,10 +85,6 @@ var Formatter = function (date) {
     this.dateObject = parseDate(date);
   }
 
-  // alert(timestamp);
-
-  // this.dateObject = new Date(timestamp);
-
   this.date = {
     timstamp: timestamp,
     dayOfMonth: this.dateObject.getDate(),         // 1-31

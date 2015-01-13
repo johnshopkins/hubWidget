@@ -1,5 +1,7 @@
 # Hub widget
 
+__This branch of the hubWidget requires jQuery and was made especially for use on jhu.edu's homepage.__
+
 Embeds articles and/or events from the Hub on your website. Drop a couple lines of code onto your website and the widget will automatically populate in the area in which it was dropped.
 
 ## API version and key
