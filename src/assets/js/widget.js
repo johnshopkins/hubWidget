@@ -1,7 +1,11 @@
+/*!
+ * Automatically creates widgets out of
+ * all divs with the class of "hub-widget"
+ *
+ */
+
 /* global require: false */
 /* global document: false */
 
-var Widget = require("./lib/WidgetCreator");
-
-var div = document.getElementById("hubWidget");
-new Widget(div);
+var WidgetCreator = require("./lib/WidgetCreator");
+new WidgetCreator(document.querySelectorAll(".hub-widget"));

@@ -1,9 +1,9 @@
-#hubWidget {
+.hub-widget {
 	color: #000;
 	.header {
 		border-bottom: 5px solid #000;
 	}
-	#hubWidgetContent {
+	.hub-widgetContent {
 		&.loading {
 			background: url("http://hub.jhu.edu/assets/shared/img/loading-light.gif") top center no-repeat;
 		}

@@ -1,5 +1,6 @@
 /**
- * A super-simple version of HubJS
+ * A simplified version of HubJS
+ * https://github.com/johnshopkins/hubJS
  */
 
 var ajax = require("./ajax");

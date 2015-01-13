@@ -2,20 +2,6 @@ var utils = function () {
 
 };
 
-utils.prototype.getPublishDate = function(timestamp) {
-  var date = new Date(timestamp * 1000);
-  var month = this.getMonth(date);
-  var day = date.getDate();
-  var year = date.getFullYear();
-
-  return fullDate = month + " " + day + ", " + year;
-};
-
-utils.prototype.getMonth = function(dateObject) {
-  var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  return monthNames[dateObject.getMonth()];
-};
-
 utils.prototype.removeClass = function (obj, className) {
 
   var classes = obj.className;

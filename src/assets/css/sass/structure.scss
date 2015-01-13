@@ -1,9 +1,9 @@
-#hubWidget {
+.hub-widget {
 	.header {
 		padding-bottom: 10px;
 		margin-bottom: 10px;
 	}
-	#hubWidgetContent {
+	.hub-widgetContent {
 		&.loading {
 			min-height: 20px;
 		}

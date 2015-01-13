@@ -55,17 +55,39 @@ function getAmPm (date) {
 
 }
 
+/**
+ * Parse event dates. The expected format
+ * is YYYY-MM-DD HH:MM. For IE8 compatibility.
+ * @param {[type]} date [description]
+ */
+function parseDate(date) {
+
+  var parts = date.split(" ");
+
+  var date = parts[0].split("-");
+  var time = parts[1].split(":");
+
+  // zero-indexing of months
+  var month = parseInt(date[1]) - 1;
+
+  return new Date(date[0], month, date[2], time[0], time[1]);
+
+}
+
 var Formatter = function (date) {
 
-  var timestamp;
-
   if (typeof date === "number") {
-    timestamp = date * 1000;
+    // article
+    var timestamp = date * 1000;
+    this.dateObject = new Date(timestamp);
   } else {
-    timestamp = Date.parse(date);
+    // event
+    this.dateObject = parseDate(date);
   }
 
-  this.dateObject = new Date(timestamp);
+  // alert(timestamp);
+
+  // this.dateObject = new Date(timestamp);
 
   this.date = {
     timstamp: timestamp,
@@ -77,6 +99,10 @@ var Formatter = function (date) {
     ampm: getAmPm(this.dateObject)                 // a.m. or p.m.
   };
 
+};
+
+Formatter.prototype.article = function () {
+  return this.date.monthName + " " + this.date.dayOfMonth + ", " + this.date.year;
 };
 
 Formatter.prototype.event = function () {
