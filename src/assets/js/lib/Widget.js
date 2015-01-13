@@ -57,6 +57,11 @@ Widget.prototype.getQueryStringParams = function () {
   var topics = this.widget.getAttribute("data-topics");
   if (topics) params.topics = topics;
 
+  if (this.type === "events") {
+    var featured = this.widget.getAttribute("data-featured");
+    if (featured) params.featured = true;
+  }
+
   return params;
 
 };

@@ -32,12 +32,13 @@ You can customize the widget by adding data attributes (see below) to the `.hub-
 The following table outlines the available attributes on the widget.
 
 | Attributes 			| Value																	| Description 														|
-|-----------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------|
-| data-count			| Integer, default: 5 													| The number of items to display 							|
-| data-tags       | String: Comma-separated list of tag slugs or IDs, default: null   | Alters the request to only get items in these tags. [Need help finding tag slugs?](#finding-tag-topic-slugs)   |
-| data-title			| String, default: News from the Hub									| The title of the widget 									|
-| data-topics     | String: Comma-separated list of topic slugs or IDs, default: null   | Alters the request to only get items in these topics. [Need help finding topic slugs?](#finding-tag-topic-slugs)   |
-| data-type       | String: articles or events   | Type of content to retrieve   |
+|-----------------|---------------------------------------|-----------------------------------------|
+| data-count			| Integer, default: 5 | The number of items to display |
+| data-featured   | Boolean, default: false | If TRUE, retrieve only featured content. Applies only to events at this time |
+| data-tags       | String: Comma-separated list of tag slugs or IDs, default: null | Alters the request to only get items in these tags. [Need help finding tag slugs?](#finding-tag-topic-slugs) |
+| data-title			| String, default: News from the Hub | The title of the widget |
+| data-topics     | String: Comma-separated list of topic slugs or IDs, default: null | Alters the request to only get items in these topics. [Need help finding topic slugs?](#finding-tag-topic-slugs) |
+| data-type       | String: articles or events | Type of content to retrieve |
 
 
 ### Advanced usage examples

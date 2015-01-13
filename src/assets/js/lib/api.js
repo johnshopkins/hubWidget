@@ -17,7 +17,7 @@ var api = function (settings) {
  *
  * @param  {string}   endpoint    API endpoint
  * @param  {object}   data      Data to be sent to the server
- * @return {Object}     promise
+ * @return {Object}   promise
  */
 api.prototype.get = function (endpoint, data) {
 
@@ -35,7 +35,7 @@ api.prototype.get = function (endpoint, data) {
  * Find an article or articles
  *
  * @param  {object}   data      Data to be sent to the server
- * @return {Object}     promise
+ * @return {Object}   promise
  */
 api.prototype.articles = function(data) {
   return this.get("articles", data);
@@ -45,9 +45,13 @@ api.prototype.articles = function(data) {
  * Find an event or events
  *
  * @param  {object}   data      Data to be sent to the server
- * @return {Object}     promise
+ * @param  {boolean}  featured  Retrieves only featured events if TRUE
+ * @return {Object}   promise
  */
-api.prototype.events = function(data) {
+api.prototype.events = function(data, featured) {
+
+  if (featured === true) data.featured = true;
+
   return this.get("events", data);
 }
 
