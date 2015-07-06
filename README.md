@@ -14,7 +14,7 @@ Drop the following code in the HTML of your website where you want the widget to
 
 ```html
 <div class="hub-widget" data-version="[API_VERSION]" data-key="[API_KEY]"></div>
-<script src="http://hub.jhu.edu/assets/shared/js/hubwidget.4.0.min.js"></script>
+<script src="//hub.jhu.edu/assets/shared/js/hubwidget.4.1.0.min.js"></script>
 ```
 
 This code will retrieve default content from the Hub API, which consists of the 5 most recently published articles.
@@ -77,10 +77,10 @@ Both light and dark CSS themes are available for you to style the Hub Widget. Yo
 
 ```html
 <!-- for websites with light colored backgrounds -->
-<link rel="stylesheet" href="http://hub.jhu.edu/assets/shared/css/widget-light.4.0.css" />
+<link rel="stylesheet" href="//hub.jhu.edu/assets/shared/css/widget-light.4.1.0.css" />
 
 <!-- for websites with dark colored backgrounds -->
-<link rel="stylesheet" href="http://hub.jhu.edu/assets/shared/css/widget-dark.4.0.css" />
+<link rel="stylesheet" href="//hub.jhu.edu/assets/shared/css/widget-dark.4.1.0.css" />
 ```
 
 ## Browser compatibility
