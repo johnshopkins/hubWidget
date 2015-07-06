@@ -163,6 +163,8 @@ Widget.prototype.getFormattedEvents = function (data) {
  */
 Widget.prototype.displayError = function () {
 
+  this.contentDiv = this.widget.querySelector(".content");
+  utils.removeClass(this.contentDiv, "loading");
   this.contentDiv.innerHTML = "<p>Sorry, no results were found. Trying checking out <a href=\"http://hub.jhu.edu\">The Hub</a> for the latest Johns Hopkins news and events.</p>";
 
 };
