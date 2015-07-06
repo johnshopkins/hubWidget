@@ -25,7 +25,7 @@ api.prototype.get = function (endpoint, data) {
   data.key = this.key;
 
   return ajax.get({
-    url: "http://api.hub.jhu.edu/" + endpoint,
+    url: "https://api.hub.jhu.edu/" + endpoint,
     dataType: "jsonp",
     data: data
   });
