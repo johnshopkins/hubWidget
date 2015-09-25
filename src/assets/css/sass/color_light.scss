@@ -1,31 +1,25 @@
 .hub-widget {
-	color: #000;
-	.header {
-		border-bottom: 5px solid #000;
-	}
-	.loading {
-		background: url("https://hub.jhu.edu/assets/shared/img/loading-light.gif") top center no-repeat;
-	}
+	color: $black;
+
+	.header { border-bottom: 5px solid $black; }
+
+	.loading { background: url("https://hub.jhu.edu/assets/shared/img/loading-light.gif") top center no-repeat; }
+
 	a {
-		color: #000;
-		&:hover {
-			color: $hopkins_blue;
-		}
+		color: $black;
+		&:hover { color: $hopkins_blue; }
 	}
-	.pubdate {
-		color: #aaa;
-	}
+
+	.pubdate { color: $gray3; }
+
 	.hubpower {
 		.link {
 			a {
 				color: $hopkins_blue;
-				&:hover {
-					color: #aaa;
-				}
+				&:hover { color: $gray3; }
 			}
 		}
-		.image {
-			background: url("https://hub.jhu.edu/assets/shared/img/widget-hubpower-light.png") top right no-repeat;
-		}
+		
+		.image { background: url("https://hub.jhu.edu/assets/shared/img/widget-hubpower-light.png") top right no-repeat; }
 	}
 }

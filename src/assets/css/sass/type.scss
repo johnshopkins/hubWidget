@@ -1,26 +1,24 @@
 .hub-widget {
 	font-family: "Myriad Pro", Myriad, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
 	line-height: 130%;
+
 	.header {
 		font-size: 20px;
 		font-weight: bold;
 	}
-	ul {
-		list-style: none;
-	}
-	.headline {
-		font-size: 15px;
-	}
-	a {
-		text-decoration: none;
-	}
+
+	ul { list-style: none; }
+
+	.headline { font-size: 15px; }
+
+	a { text-decoration: none; }
+
 	.pubdate {
 		font-size: 13px;
 		font-style: italic;
 	}
+
 	.hubpower {
-		.link {
-			font-size: 13px;
-		}
+		.link { font-size: 13px; }
 	}
 }
