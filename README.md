@@ -4,7 +4,7 @@ Embeds articles and/or events from the Hub on your website. Drop a couple lines 
 
 ## API version and key
 
-The [Hub API](https://api.hub.jhu.edu), the system the widget runs on, requires all requests to specify an API version number and an authorization key. If you do not have an authorization key, please use the [widget customization form](http://hub.jhu.edu/developers/widget) to get a widget pre-loaded with a key.
+The [Hub API](https://api.hub.jhu.edu), the system the widget runs on, requires all requests to specify an API version number and an authorization key. If you do not have an authorization key, please [request an API key](mailto:jwachter@jhu.edu?subject=API key request).
 
 If you are already using the API, plug your API key into the `data-key` attribute and the latest version of the API into the `data-version` attribute in the examples below. See the [API Documentation](http://api.hub.jhu.edu/docs) for more information about API keys and versions.
 
@@ -31,7 +31,7 @@ You can customize the widget by adding data attributes (see below) to the `.hub-
 
 The following table outlines the available attributes on the widget.
 
-| Attributes 			| Value																	| Description 														|
+| Attribute  			| Value																	| Description 														|
 |-----------------|---------------------------------------|-----------------------------------------|
 | data-count			| Integer, default: 5 | The number of items to display |
 | data-featured   | Boolean, default: false | If TRUE, retrieve only featured content. Applies only to events at this time |
