@@ -67,7 +67,7 @@ The easiest way to find a tag or topic slug is to visit that term's page on the 
 
 | URL														| Slug 						|
 | ----------------------------------------------------------|---------------------------|
-| http://hub.jhu.edu/tags/film-and-media-studies			| film-and-media-studies	|
+| http://hub.jhu.edu/tags/film-and-media-studies/articles			| film-and-media-studies	|
 | http://hub.jhu.edu/health									| health					|
 
 
