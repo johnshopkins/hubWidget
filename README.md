@@ -63,7 +63,7 @@ Retrieve 10 events from a topic:
 
 ### <a name="finding-tag-topic-slugs"></a>Finding tag or topic slugs
 
-The easiest way to find a tag or topic slug is to visit that term's page on the Hub. Topic pages can be found by clicking "See all &raquo;" on the topic's homepage section. To find a tag page, find an article that is tagged with the tag you are looking for. Then click on the tag's name under the byline, which will take you to the tag page. Once you have found the tag or topic page you are looking for, the slug is located in the URL. Examples:
+The easiest way to find a tag or topic slug is to visit that term's page on the Hub. Topic pages can be found by clicking "See all &raquo;" on the topic's homepage section. To find a tag page, find an article that is tagged with the tag you are looking for. Then click on the tag's name at the end of the article, which will take you to the tag page. Once you have found the tag or topic page you are looking for, the slug is located in the URL. Examples:
 
 | URL														| Slug 						|
 | ----------------------------------------------------------|---------------------------|
